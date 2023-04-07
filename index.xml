@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Lin</title>
-    <link>https://04872.github.io/</link>
+    <link>http://04872.github.io/</link>
     <description>Recent content on Lin</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
     <lastBuildDate>Fri, 07 Apr 2023 16:32:22 +0800</lastBuildDate>
     
-        <atom:link href="https://04872.github.io/index.xml" rel="self" type="application/rss+xml" />
+        <atom:link href="http://04872.github.io/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Third</title>
-      <link>https://04872.github.io/post/third/</link>
+      <link>http://04872.github.io/post/third/</link>
       <pubDate>Fri, 07 Apr 2023 16:32:22 +0800</pubDate>
       
-      <guid>https://04872.github.io/post/third/</guid>
+      <guid>http://04872.github.io/post/third/</guid>
       
         <description></description>
       
@@ -24,10 +24,10 @@
     
     <item>
       <title>Second</title>
-      <link>https://04872.github.io/post/second/</link>
+      <link>http://04872.github.io/post/second/</link>
       <pubDate>Fri, 07 Apr 2023 16:21:28 +0800</pubDate>
       
-      <guid>https://04872.github.io/post/second/</guid>
+      <guid>http://04872.github.io/post/second/</guid>
       
         <description></description>
       
@@ -35,10 +35,10 @@
     
     <item>
       <title>First</title>
-      <link>https://04872.github.io/post/first/</link>
+      <link>http://04872.github.io/post/first/</link>
       <pubDate>Fri, 07 Apr 2023 15:33:53 +0800</pubDate>
       
-      <guid>https://04872.github.io/post/first/</guid>
+      <guid>http://04872.github.io/post/first/</guid>
       
         <description></description>
       

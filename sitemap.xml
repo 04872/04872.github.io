@@ -1,49 +1,49 @@
-<?xml-stylesheet type="text/xsl" href="https://04872.github.io/sitemap.xsl"?>
+<?xml-stylesheet type="text/xsl" href="http://04872.github.io/sitemap.xsl"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>https://04872.github.io/</loc>
+    <loc>http://04872.github.io/</loc>
     <lastmod>2023-04-07T16:32:22+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://04872.github.io/post/</loc>
+    <loc>http://04872.github.io/post/</loc>
     <lastmod>2023-04-07T16:32:22+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://04872.github.io/post/third/</loc>
+    <loc>http://04872.github.io/post/third/</loc>
     <lastmod>2023-04-07T16:32:22+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://04872.github.io/post/second/</loc>
+    <loc>http://04872.github.io/post/second/</loc>
     <lastmod>2023-04-07T16:21:28+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://04872.github.io/post/first/</loc>
+    <loc>http://04872.github.io/post/first/</loc>
     <lastmod>2023-04-07T15:33:53+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://04872.github.io/categories/</loc>
+    <loc>http://04872.github.io/categories/</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://04872.github.io/tags/</loc>
+    <loc>http://04872.github.io/tags/</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>

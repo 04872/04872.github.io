@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <title>
-          Lin
+          MySQL索引面试题 - Lin
         </title>
     
 
@@ -29,6 +29,8 @@
 <meta name="mobile-web-app-capable" content="yes">
 
 <meta name="author" content="Lin" />
+  <meta name="description" content="" />
+
 
 
 
@@ -38,8 +40,8 @@
 <meta name="generator" content="Hugo 0.111.3" />
 
 
-<link rel="canonical" href="http://04872.github.io/" />
-<link href="/index.xml" rel="alternate" type="application/rss+xml" title="Lin" />
+<link rel="canonical" href="http://04872.github.io/post/mysql%E7%B4%A2%E5%BC%95%E9%9D%A2%E8%AF%95%E9%A2%98/" />
+
 
 
 
@@ -64,13 +66,18 @@
 
 
 
-<meta property="og:title" content="Lin" />
+<meta property="og:title" content="MySQL索引面试题" />
 <meta property="og:description" content="" />
-<meta property="og:type" content="website" />
-<meta property="og:url" content="http://04872.github.io/" />
-<meta itemprop="name" content="Lin">
-<meta itemprop="description" content=""><meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Lin"/>
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://04872.github.io/post/mysql%E7%B4%A2%E5%BC%95%E9%9D%A2%E8%AF%95%E9%A2%98/" /><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2023-04-17T14:54:46+08:00" />
+<meta property="article:modified_time" content="2023-04-17T14:54:46+08:00" />
+<meta itemprop="name" content="MySQL索引面试题">
+<meta itemprop="description" content=""><meta itemprop="datePublished" content="2023-04-17T14:54:46+08:00" />
+<meta itemprop="dateModified" content="2023-04-17T14:54:46+08:00" />
+<meta itemprop="wordCount" content="1209">
+<meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="MySQL索引面试题"/>
 <meta name="twitter:description" content=""/>
 
 <!--[if lte IE 9]>
@@ -215,7 +222,7 @@
   <ul id="menu" class="menu">
     
     
-        <li class="menu-item active">
+        <li class="menu-item">
         
           
           
@@ -271,23 +278,15 @@
 
     <div id="mobile-panel">
       <main id="main" class="main bg-llight wallpaper">
+        <div class="content-wrapper">
+    <div id="content" class="content">
+      <article class="post">
         
-<section id="posts" class="posts">
-  
-  
-    
-  
-  
-  
-    <article class="post">
-  <header class="post-header">
-    <h1 class="post-title">
-      
-      <a class="post-link" href="/post/third/">Third</a>
-    </h1>
-    
+        <header class="post-header">
+          <h1 class="post-title">MySQL索引面试题</h1>
+          
 
-    <div class="post-meta">
+          <div class="post-meta">
   <div class="post-meta-author">
     by
       <a href="/about">
@@ -299,8 +298,8 @@
   </div>
 
   <div class="post-meta-time">
-    <time datetime="2023-04-07">
-      2023-04-07
+    <time datetime="2023-04-17">
+      2023-04-17
     </time>
   </div>
 
@@ -322,186 +321,117 @@
   </div>
 </div>
 
-  </header>
-  
-  <div class="post-content">
-    
-      <div class="post-summary">
+        </header>
+
         
-      </div>
-      <div class="read-more">
-        <a href="/post/third/" class="read-more-link"
-          >阅读全文</a
-        >
-      </div>
-    
-  </div>
-</article>
+        <div class="post-content">
+          <h1 id="mysql索引面试题">MySQL索引面试题</h1>
+<h3 id="1-索引分类">1. <strong>索引分类</strong></h3>
+<ul>
+<li>
+<p>按「数据结构」分类：<strong>B+tree索引、Hash索引、Full-text索引</strong>。</p>
+</li>
+<li>
+<p>按「物理存储」分类：<strong>聚簇索引（主键索引）、二级索引（辅助索引）</strong>。</p>
+</li>
+<li>
+<p>按「字段特性」分类：<strong>主键索引、唯一索引、普通索引、前缀索引</strong>。</p>
+<ul>
+<li>主键索引就是建立在主键字段上的索引，通常在创建表的时候一起创建，一张表最多只有一个主键索引，索引列的值不允许有空值。</li>
+<li>唯一索引建立在 UNIQUE 字段上的索引，一张表可以有多个唯一索引，索引列的值必须唯一，但是允许有空值。</li>
+<li>普通索引就是建立在普通字段上的索引，既不要求字段为主键，也不要求字段为 UNIQUE。</li>
+<li>前缀索引是指对字符类型字段的前几个字符建立的索引，而不是在整个字段上建立的索引，前缀索引可以建立在字段类型为 char、 varchar、binary、varbinary 的列上。使用前缀索引的目的是为了减少索引占用的存储空间，提升查询效率。</li>
+</ul>
+</li>
+<li>
+<p>按「字段个数」分类：<strong>单列索引、联合索引</strong>。</p>
+</li>
+</ul>
+<p>InnoDB 是在 MySQL 5.5 之后成为默认的 MySQL 存储引擎，B+Tree 索引类型也是 MySQL 存储引擎采用最多的索引类型。</p>
+<p>在创建表时，InnoDB 存储引擎会根据不同的场景选择不同的列作为索引：</p>
+<ul>
+<li>
+<p>如果有主键，默认会使用主键作为聚簇索引的索引键（key）；</p>
+</li>
+<li>
+<p>如果没有主键，就选择第一个不包含 NULL 值的唯一列作为聚簇索引的索引键（key）；</p>
+</li>
+<li>
+<p>在上面两个都没有的情况下，InnoDB 将自动生成一个隐式自增 id 列作为聚簇索引的索引键（key）；
+其它索引都属于辅助索引（Secondary Index），也被称为二级索引或非聚簇索引。创建的主键索引和二级索引默认使用的是 B+Tree 索引。</p>
+</li>
+</ul>
+<h4 id="通过二级索引查询商品数据的过程">通过二级索引查询商品数据的过程</h4>
+<p>主键索引的 B+Tree 和二级索引的 B+Tree 区别如下：</p>
+<ul>
+<li>主键索引的 B+Tree 的叶子节点存放的是实际数据，所有完整的用户记录都存放在主键索引的 B+Tree 的叶子节点里；</li>
+<li>二级索引的 B+Tree 的叶子节点存放的是主键值，而不是实际数据。</li>
+</ul>
+<h3 id="2-索引底层使用了什么数据结构和算法">2. <strong>索引底层使用了什么数据结构和算法？</strong></h3>
+<p>B+树、Hash表、 FULL-TEXT</p>
+<h3 id="3-为什么-mysql-innodb-选择-btree-作为索引的数据结构">3. <strong>为什么 MySQL InnoDB 选择 B+tree 作为索引的数据结构？</strong></h3>
+<ul>
+<li>B+Tree 只在叶子节点存储数据，而 B 树 的非叶子节点也要存储数据，所以 B+Tree 的单个节点的数据量更小，在相同的磁盘 I/O 次数下，就能查询更多的节点。</li>
+<li>另外，B+Tree 叶子节点采用的是双链表连接，适合 MySQL 中常见的基于范围的顺序查找，而 B 树无法做到这一点。</li>
+<li>对于有 N 个叶子节点的 B+Tree，其搜索复杂度为$\mathcal{O}(\log_{d}N)$，其中 d 表示节点允许的最大子节点个数为 d 个。</li>
+<li>在实际的应用当中， d 值是大于100的，这样就保证了，即使数据达到千万级别时，B+Tree 的高度依然维持在 3~4 层左右，也就是说一次数据查询操作只需要做 3~4 次的磁盘 I/O 操作就能查询到目标数据。</li>
+<li>而二叉树的每个父节点的儿子节点个数只能是 2 个，意味着其搜索复杂度为 $\mathcal{O}(\log N)$，这已经比 B+Tree 高出不少，因此二叉树检索到目标数据所经历的磁盘 I/O 次数要更多。</li>
+</ul>
+<h3 id="4-什么时候适用索引">4. <strong>什么时候适用索引？</strong></h3>
+<h3 id="5-什么时候不需要创建索引">5. <strong>什么时候不需要创建索引？</strong></h3>
+<h3 id="6-什么情况下索引会失效">6. <strong>什么情况下索引会失效？</strong></h3>
+<h3 id="7-有什么优化索引的方法">7. <strong>有什么优化索引的方法？</strong></h3>
+        </div>
 
-  
-    <article class="post">
-  <header class="post-header">
-    <h1 class="post-title">
-      
-      <a class="post-link" href="/post/second/">Second</a>
-    </h1>
-    
-
-    <div class="post-meta">
-  <div class="post-meta-author">
-    by
-      <a href="/about">
-        <span class="post-meta-author-name">
-          Lin
-        </span>
-      </a>
-    
-  </div>
-
-  <div class="post-meta-time">
-    <time datetime="2023-04-07">
-      2023-04-07
-    </time>
-  </div>
-
-  
-
-
-  <div class="post-meta__right">
-    
-
-    
-
-
-    
-    
-
-
-    
-    
-  </div>
-</div>
-
-  </header>
-  
-  <div class="post-content">
-    
-      <div class="post-summary">
         
-      </div>
-      <div class="read-more">
-        <a href="/post/second/" class="read-more-link"
-          >阅读全文</a
-        >
-      </div>
-    
-  </div>
-</article>
-
-  
-    <article class="post">
-  <header class="post-header">
-    <h1 class="post-title">
-      
-      <a class="post-link" href="/post/first/">First</a>
-    </h1>
-    
-
-    <div class="post-meta">
-  <div class="post-meta-author">
-    by
-      <a href="/about">
-        <span class="post-meta-author-name">
-          Lin
-        </span>
-      </a>
-    
-  </div>
-
-  <div class="post-meta-time">
-    <time datetime="2023-04-07">
-      2023-04-07
-    </time>
-  </div>
-
-  
-
-
-  <div class="post-meta__right">
-    
-
-    
-
-
-    
-    
-
-
-    
-    
-  </div>
-</div>
-
-  </header>
-  
-  <div class="post-content">
-    
-      <div class="post-summary">
         
-      </div>
-      <div class="read-more">
-        <a href="/post/first/" class="read-more-link"
-          >阅读全文</a
-        >
-      </div>
+
+
+
+        
+        
+
+
+        <footer class="post-footer">
+          
+
+
+          
+          <nav class="post-nav">
+            
+            
+              <a class="next" href="/post/%E9%A1%B9%E7%9B%AE%E7%AE%80%E4%BB%8B/">
+                <span class="next-text nav-default">项目简介</span>
+                <span class="prev-text nav-mobile">下一篇</span>
+                
+                <i class="iconfont">
+                  <svg class="icon" viewBox="0 0 1024 1024" version="1.1"
+  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+  width="18" height="18">
+  <path d="M332.091514 74.487481l-75.369571 89.491197c-10.963703 12.998035-10.285251 32.864502 1.499144 44.378743l286.278095 300.375162L266.565125 819.058374c-11.338233 12.190647-11.035334 32.285311 0.638543 44.850487l80.46666 86.564541c11.680017 12.583596 30.356378 12.893658 41.662889 0.716314l377.434212-421.426145c11.332093-12.183484 11.041474-32.266891-0.657986-44.844348l-80.46666-86.564541c-1.772366-1.910513-3.706415-3.533476-5.750981-4.877077L373.270379 71.774697C361.493148 60.273758 343.054193 61.470003 332.091514 74.487481z"></path>
+</svg>
+
+                </i>
+              </a>
+          </nav>
+        </footer>
+      </article>
+
+      
+      
+
+
+      
+      
+
+
+    </div>
+
     
+    
+
+
   </div>
-</article>
-
-  
-</section>
-
-
-
-
-
-
-  
-  
-  
-
-  
-  
-
-  
-  
-
-  
-  
-
-  
-  
-  <nav class="pagination">
-    <ul>
-      
-      <li >
-        <a href="/">1</a>
-      </li>
-      
-      <li  class="active" >
-        <a href="/page/2/">2</a>
-      </li>
-      
-    </ul>
-  </nav>
-
-  
-  
-
-
-
-
-
 
       </main>
 
@@ -583,6 +513,13 @@
 
 
 
+  <script type="text/javascript">
+    window.MathJax = {
+      showProcessingMessages: false,
+      messageStyle: 'none'
+    };
+  </script>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=TeX-MML-AM_CHTML' async></script>
 
 
 

@@ -6,10 +6,76 @@
     <description>Recent content on Lin</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Tue, 11 Apr 2023 15:49:57 +0800</lastBuildDate>
+    <lastBuildDate>Mon, 17 Apr 2023 14:54:46 +0800</lastBuildDate>
     
         <atom:link href="http://04872.github.io/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>MySQL索引面试题</title>
+      <link>http://04872.github.io/post/mysql%E7%B4%A2%E5%BC%95%E9%9D%A2%E8%AF%95%E9%A2%98/</link>
+      <pubDate>Mon, 17 Apr 2023 14:54:46 +0800</pubDate>
+      
+      <guid>http://04872.github.io/post/mysql%E7%B4%A2%E5%BC%95%E9%9D%A2%E8%AF%95%E9%A2%98/</guid>
+      
+        <description>&lt;h1 id=&#34;mysql索引面试题&#34;&gt;MySQL索引面试题&lt;/h1&gt;
+&lt;h3 id=&#34;1-索引分类&#34;&gt;1. &lt;strong&gt;索引分类&lt;/strong&gt;&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;按「数据结构」分类：&lt;strong&gt;B+tree索引、Hash索引、Full-text索引&lt;/strong&gt;。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;按「物理存储」分类：&lt;strong&gt;聚簇索引（主键索引）、二级索引（辅助索引）&lt;/strong&gt;。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;按「字段特性」分类：&lt;strong&gt;主键索引、唯一索引、普通索引、前缀索引&lt;/strong&gt;。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;主键索引就是建立在主键字段上的索引，通常在创建表的时候一起创建，一张表最多只有一个主键索引，索引列的值不允许有空值。&lt;/li&gt;
+&lt;li&gt;唯一索引建立在 UNIQUE 字段上的索引，一张表可以有多个唯一索引，索引列的值必须唯一，但是允许有空值。&lt;/li&gt;
+&lt;li&gt;普通索引就是建立在普通字段上的索引，既不要求字段为主键，也不要求字段为 UNIQUE。&lt;/li&gt;
+&lt;li&gt;前缀索引是指对字符类型字段的前几个字符建立的索引，而不是在整个字段上建立的索引，前缀索引可以建立在字段类型为 char、 varchar、binary、varbinary 的列上。使用前缀索引的目的是为了减少索引占用的存储空间，提升查询效率。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;按「字段个数」分类：&lt;strong&gt;单列索引、联合索引&lt;/strong&gt;。&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;InnoDB 是在 MySQL 5.5 之后成为默认的 MySQL 存储引擎，B+Tree 索引类型也是 MySQL 存储引擎采用最多的索引类型。&lt;/p&gt;
+&lt;p&gt;在创建表时，InnoDB 存储引擎会根据不同的场景选择不同的列作为索引：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;如果有主键，默认会使用主键作为聚簇索引的索引键（key）；&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;如果没有主键，就选择第一个不包含 NULL 值的唯一列作为聚簇索引的索引键（key）；&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;在上面两个都没有的情况下，InnoDB 将自动生成一个隐式自增 id 列作为聚簇索引的索引键（key）；
+其它索引都属于辅助索引（Secondary Index），也被称为二级索引或非聚簇索引。创建的主键索引和二级索引默认使用的是 B+Tree 索引。&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;通过二级索引查询商品数据的过程&#34;&gt;通过二级索引查询商品数据的过程&lt;/h4&gt;
+&lt;p&gt;主键索引的 B+Tree 和二级索引的 B+Tree 区别如下：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;主键索引的 B+Tree 的叶子节点存放的是实际数据，所有完整的用户记录都存放在主键索引的 B+Tree 的叶子节点里；&lt;/li&gt;
+&lt;li&gt;二级索引的 B+Tree 的叶子节点存放的是主键值，而不是实际数据。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;2-索引底层使用了什么数据结构和算法&#34;&gt;2. &lt;strong&gt;索引底层使用了什么数据结构和算法？&lt;/strong&gt;&lt;/h3&gt;
+&lt;p&gt;B+树、Hash表、 FULL-TEXT&lt;/p&gt;
+&lt;h3 id=&#34;3-为什么-mysql-innodb-选择-btree-作为索引的数据结构&#34;&gt;3. &lt;strong&gt;为什么 MySQL InnoDB 选择 B+tree 作为索引的数据结构？&lt;/strong&gt;&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;B+Tree 只在叶子节点存储数据，而 B 树 的非叶子节点也要存储数据，所以 B+Tree 的单个节点的数据量更小，在相同的磁盘 I/O 次数下，就能查询更多的节点。&lt;/li&gt;
+&lt;li&gt;另外，B+Tree 叶子节点采用的是双链表连接，适合 MySQL 中常见的基于范围的顺序查找，而 B 树无法做到这一点。&lt;/li&gt;
+&lt;li&gt;对于有 N 个叶子节点的 B+Tree，其搜索复杂度为$\mathcal{O}(\log_{d}N)$，其中 d 表示节点允许的最大子节点个数为 d 个。&lt;/li&gt;
+&lt;li&gt;在实际的应用当中， d 值是大于100的，这样就保证了，即使数据达到千万级别时，B+Tree 的高度依然维持在 3~4 层左右，也就是说一次数据查询操作只需要做 3~4 次的磁盘 I/O 操作就能查询到目标数据。&lt;/li&gt;
+&lt;li&gt;而二叉树的每个父节点的儿子节点个数只能是 2 个，意味着其搜索复杂度为 $\mathcal{O}(\log N)$，这已经比 B+Tree 高出不少，因此二叉树检索到目标数据所经历的磁盘 I/O 次数要更多。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;4-什么时候适用索引&#34;&gt;4. &lt;strong&gt;什么时候适用索引？&lt;/strong&gt;&lt;/h3&gt;
+&lt;h3 id=&#34;5-什么时候不需要创建索引&#34;&gt;5. &lt;strong&gt;什么时候不需要创建索引？&lt;/strong&gt;&lt;/h3&gt;
+&lt;h3 id=&#34;6-什么情况下索引会失效&#34;&gt;6. &lt;strong&gt;什么情况下索引会失效？&lt;/strong&gt;&lt;/h3&gt;
+&lt;h3 id=&#34;7-有什么优化索引的方法&#34;&gt;7. &lt;strong&gt;有什么优化索引的方法？&lt;/strong&gt;&lt;/h3&gt;</description>
+      
+    </item>
     
     <item>
       <title>项目简介</title>

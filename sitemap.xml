@@ -3,14 +3,21 @@
   
   <url>
     <loc>http://04872.github.io/</loc>
-    <lastmod>2023-04-17T16:02:06+08:00</lastmod>
+    <lastmod>2023-04-19T18:37:55+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://04872.github.io/post/mysql%E9%94%81%E7%AE%80%E4%BB%8B/</loc>
+    <lastmod>2023-04-19T18:37:55+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>http://04872.github.io/post/</loc>
-    <lastmod>2023-04-17T16:02:06+08:00</lastmod>
+    <lastmod>2023-04-19T18:37:55+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>

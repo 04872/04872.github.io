@@ -23,13 +23,6 @@
   </url>
   
   <url>
-    <loc>http://04872.github.io/post/%E5%8F%88%E6%98%AF%E6%B5%8B%E8%AF%95/</loc>
-    <lastmod>2023-04-17T16:02:06+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
     <loc>http://04872.github.io/post/mysql%E7%B4%A2%E5%BC%95%E9%9D%A2%E8%AF%95%E9%A2%98/</loc>
     <lastmod>2023-04-17T14:54:46+08:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -39,34 +32,6 @@
   <url>
     <loc>http://04872.github.io/post/%E9%A1%B9%E7%9B%AE%E7%AE%80%E4%BB%8B/</loc>
     <lastmod>2023-04-11T15:49:57+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>http://04872.github.io/post/%E6%88%91%E7%9A%84%E6%B5%8B%E8%AF%95%E5%91%A2/</loc>
-    <lastmod>2023-04-07T16:48:26+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>http://04872.github.io/post/third/</loc>
-    <lastmod>2023-04-07T16:32:22+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>http://04872.github.io/post/second/</loc>
-    <lastmod>2023-04-07T16:21:28+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>http://04872.github.io/post/first/</loc>
-    <lastmod>2023-04-07T15:33:53+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>

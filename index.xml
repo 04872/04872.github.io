@@ -111,17 +111,6 @@
     </item>
     
     <item>
-      <title>又是测试</title>
-      <link>http://04872.github.io/post/%E5%8F%88%E6%98%AF%E6%B5%8B%E8%AF%95/</link>
-      <pubDate>Mon, 17 Apr 2023 16:02:06 +0800</pubDate>
-      
-      <guid>http://04872.github.io/post/%E5%8F%88%E6%98%AF%E6%B5%8B%E8%AF%95/</guid>
-      
-        <description>&lt;p&gt;主页配置改了.&lt;/p&gt;</description>
-      
-    </item>
-    
-    <item>
       <title>MySQL索引面试题</title>
       <link>http://04872.github.io/post/mysql%E7%B4%A2%E5%BC%95%E9%9D%A2%E8%AF%95%E9%A2%98/</link>
       <pubDate>Mon, 17 Apr 2023 14:54:46 +0800</pubDate>
@@ -337,50 +326,6 @@
 &lt;li&gt;GET请求在URL中传送的参数是有长度限制。（大多数）浏览器通常都会限制url长度在2K个字节，而（大多数）服务器最多处理64K大小的url。&lt;/li&gt;
 &lt;li&gt;GET产生一个TCP数据包；POST产生两个TCP数据包。对于GET方式的请求，浏览器会把http header和data一并发送出去，服务器响应200（返回数据）；而对于POST，浏览器先发送header，服务器响应100（指示信息—表示请求已接收，继续处理）continue，浏览器再发送data，服务器响应200 ok（返回数据）。&lt;/li&gt;
 &lt;/ul&gt;</description>
-      
-    </item>
-    
-    <item>
-      <title>我的测试呢</title>
-      <link>http://04872.github.io/post/%E6%88%91%E7%9A%84%E6%B5%8B%E8%AF%95%E5%91%A2/</link>
-      <pubDate>Fri, 07 Apr 2023 16:48:26 +0800</pubDate>
-      
-      <guid>http://04872.github.io/post/%E6%88%91%E7%9A%84%E6%B5%8B%E8%AF%95%E5%91%A2/</guid>
-      
-        <description></description>
-      
-    </item>
-    
-    <item>
-      <title>Third</title>
-      <link>http://04872.github.io/post/third/</link>
-      <pubDate>Fri, 07 Apr 2023 16:32:22 +0800</pubDate>
-      
-      <guid>http://04872.github.io/post/third/</guid>
-      
-        <description></description>
-      
-    </item>
-    
-    <item>
-      <title>Second</title>
-      <link>http://04872.github.io/post/second/</link>
-      <pubDate>Fri, 07 Apr 2023 16:21:28 +0800</pubDate>
-      
-      <guid>http://04872.github.io/post/second/</guid>
-      
-        <description></description>
-      
-    </item>
-    
-    <item>
-      <title>First</title>
-      <link>http://04872.github.io/post/first/</link>
-      <pubDate>Fri, 07 Apr 2023 15:33:53 +0800</pubDate>
-      
-      <guid>http://04872.github.io/post/first/</guid>
-      
-        <description></description>
       
     </item>
     

@@ -28,14 +28,14 @@ $$f(x) = g(x)h(x).$$
 &lt;blockquote&gt;
 &lt;p&gt;&lt;!-- raw HTML omitted --&gt;&lt;strong&gt;整除关系不随数域的改变而改变&lt;/strong&gt;&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;p&gt;&lt;strong&gt;定理1&lt;/strong&gt; 对于数域 $P$ 上的任意两个多项式 $f(x)$，$g(x)$，其中 $g(x)\neq 0$, $g(x)\mid f(x)$ 的充要条件是 $g(x)$ 除 $f(x)$ 的余数是零.
-&lt;strong&gt;证明&lt;/strong&gt; 充分性：如果 $r(x)=0$，那么 $f(x) = q(x)g(x)$，所以整除.&lt;/p&gt;
-&lt;p&gt;必要性：根据整除定义，$f(x) = q(x)g(x)=q(x)g(x)+0$.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;定理1&lt;/strong&gt; 对于数域 $P$ 上的任意两个多项式 $f(x)$，$g(x)$，其中 $g(x)\neq 0$, $g(x)\mid f(x)$ 的充要条件是 $g(x)$ 除 $f(x)$ 的余数是零.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;证明&lt;/strong&gt; 充分性：如果 $r(x)=0$，那么 $f(x) = q(x)g(x)$，所以整除.
+必要性：根据整除定义，$f(x) = q(x)g(x)=q(x)g(x)+0$.&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;整除性质1&lt;/strong&gt; 如果 $f(x)$ 和 $g(x)$ 相互整除，那么存在非零常数 $c$，使得 $f(x)=cg(x)$.&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;证明&lt;/strong&gt; 有 $f(x)h_1(x) = g(x)$，$g(x)h_2(x)=f(x)$.&lt;/p&gt;
-&lt;p&gt;​		$\Rightarrow f(x)h_1(x)h_2(x) = f(x)$.&lt;/p&gt;
-&lt;p&gt;​		如果 $f(x)=0$，那么 $g(x) = 0$，命题显然成立.&lt;/p&gt;
-&lt;p&gt;​		如果 $f(x)\neq 0$，由多项式乘法消去律消去 $f(x)$ 得，$h_1(x)h_2(x) = 1$，那么 $\partial(h_1(x))+\partial(h_2(x)) = 0$.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;证明&lt;/strong&gt; 有 $f(x)h_1(x) = g(x)$，$g(x)h_2(x)=f(x)$.
+​		$\Rightarrow f(x)h_1(x)h_2(x) = f(x)$.
+​		如果 $f(x)=0$，那么 $g(x) = 0$，命题显然成立.
+​		如果 $f(x)\neq 0$，由多项式乘法消去律消去 $f(x)$ 得，$h_1(x)h_2(x) = 1$，那么 $\partial(h_1(x))+\partial(h_2(x)) = 0$.&lt;/p&gt;
 &lt;p&gt;所以 $\partial(h_1(x)) = \partial(h_2(x))=0$.  那么 $c$ 取 $h_2(x)$ 即可.&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;整除性质2（传递性）&lt;/strong&gt; 如果 $f(x)\mid g(x)$，$g(x)\mid h(x)$，那么 $f(x)\mid h(x)$.&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;证明&lt;/strong&gt; 根据整除定义简单验证即可.&lt;/p&gt;

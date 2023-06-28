@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <title>
-          多项式 - Lin
+          哈希表章节所用数据结构 - Lin
         </title>
     
 
@@ -40,7 +40,7 @@
 <meta name="generator" content="Hugo 0.111.3" />
 
 
-<link rel="canonical" href="http://04872.github.io/post/%E5%A4%9A%E9%A1%B9%E5%BC%8F/" />
+<link rel="canonical" href="http://04872.github.io/post/%E5%93%88%E5%B8%8C%E8%A1%A8%E7%AB%A0%E8%8A%82%E6%89%80%E7%94%A8%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" />
 
 
 
@@ -66,18 +66,18 @@
 
 
 
-<meta property="og:title" content="多项式" />
+<meta property="og:title" content="哈希表章节所用数据结构" />
 <meta property="og:description" content="" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="http://04872.github.io/post/%E5%A4%9A%E9%A1%B9%E5%BC%8F/" /><meta property="article:section" content="post" />
-<meta property="article:published_time" content="2023-05-22T21:24:01+08:00" />
-<meta property="article:modified_time" content="2023-05-22T21:24:01+08:00" />
-<meta itemprop="name" content="多项式">
-<meta itemprop="description" content=""><meta itemprop="datePublished" content="2023-05-22T21:24:01+08:00" />
-<meta itemprop="dateModified" content="2023-05-22T21:24:01+08:00" />
-<meta itemprop="wordCount" content="562">
-<meta itemprop="keywords" content="多项式," /><meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="多项式"/>
+<meta property="og:url" content="http://04872.github.io/post/%E5%93%88%E5%B8%8C%E8%A1%A8%E7%AB%A0%E8%8A%82%E6%89%80%E7%94%A8%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" /><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2023-06-28T19:45:18+08:00" />
+<meta property="article:modified_time" content="2023-06-28T19:45:18+08:00" />
+<meta itemprop="name" content="哈希表章节所用数据结构">
+<meta itemprop="description" content=""><meta itemprop="datePublished" content="2023-06-28T19:45:18+08:00" />
+<meta itemprop="dateModified" content="2023-06-28T19:45:18+08:00" />
+<meta itemprop="wordCount" content="2200">
+<meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="哈希表章节所用数据结构"/>
 <meta name="twitter:description" content=""/>
 
 <!--[if lte IE 9]>
@@ -285,7 +285,7 @@
       <article class="post">
         
         <header class="post-header">
-          <h1 class="post-title">多项式</h1>
+          <h1 class="post-title">哈希表章节所用数据结构</h1>
           
 
           <div class="post-meta">
@@ -300,8 +300,8 @@
   </div>
 
   <div class="post-meta-time">
-    <time datetime="2023-05-22">
-      2023-05-22
+    <time datetime="2023-06-28">
+      2023-06-28
     </time>
   </div>
 
@@ -311,10 +311,7 @@
   <div class="post-meta__right">
     
 
-    <div class="post-meta-category">
-        <a href="http://04872.github.io/categories/%E9%AB%98%E7%AD%89%E4%BB%A3%E6%95%B0/"> 高等代数 </a>
-          
-      </div>
+    
 
 
     
@@ -330,32 +327,248 @@
 
         
         <div class="post-content">
-          <h1 id="整除">整除</h1>
-<p><strong>带余除法</strong> 对于 $P[x]$ 上的任意两个多项式 $f(x)$ 和 $g(x)$，其中 $g(x)\neq 0$，则一定有 $P[x]$ 中的多项式 $q(x)$、$r(x)$ 存在，使得
-$$f(x) = q(x)g(x)+r(x).$$
-<strong>证明</strong> : 过程就是带余除法的过程.</p>
-<p><strong>定义1</strong> 称数域 $P$ 上的多项式  $g(x)$ 整除 $f(x)$ ，如果有数域 $P$ 上的多项式 $h(x)$ 使得
-$$f(x) = g(x)h(x).$$
-我们用 “$g(x)\mid f(x)$” 表示 $g(x)$ 整除 $f(x)$，用 “$g(x)\nmid f(x)$” 表示 $g(x)$ 不整除 $f(x)$.</p>
+          <h1 id="unorder_map">unorder_map</h1>
+<h2 id="无序关联式容器">无序关联式容器</h2>
+<p>​	一类“特殊”的关联式容器，它们常被称为“无序容器”、“哈希容器”或者“无序关联容器”。</p>
 <blockquote>
-<p><!-- raw HTML omitted --><strong>整除关系不随数域的改变而改变</strong><!-- raw HTML omitted --></p>
+<p>注意，无序容器是 <a href="http://c.biancheng.net/cplus/">C++</a> 11 标准才正式引入到 <a href="http://c.biancheng.net/stl/">STL</a> 标准库中的，这意味着如果要使用该类容器，则必须选择支持 C++ 11 标准的编译器。</p>
 </blockquote>
-<p><strong>定理1</strong> 对于数域 $P$ 上的任意两个多项式 $f(x)$，$g(x)$，其中 $g(x)\neq 0$, $g(x)\mid f(x)$ 的充要条件是 $g(x)$ 除 $f(x)$ 的余数是零.</p>
-<p><strong>证明</strong> 充分性：如果 $r(x)=0$，那么 $f(x) = q(x)g(x)$，所以整除.
-必要性：根据整除定义，$f(x) = q(x)g(x)=q(x)g(x)+0$.</p>
-<p><strong>整除性质1</strong> 如果 $f(x)$ 和 $g(x)$ 相互整除，那么存在非零常数 $c$，使得 $f(x)=cg(x)$.</p>
-<p><strong>证明</strong> 有 $f(x)h_1(x) = g(x)$，$g(x)h_2(x)=f(x)$.
-​		$\Rightarrow f(x)h_1(x)h_2(x) = f(x)$.
-​		如果 $f(x)=0$，那么 $g(x) = 0$，命题显然成立.
-​		如果 $f(x)\neq 0$，由多项式乘法消去律消去 $f(x)$ 得，$h_1(x)h_2(x) = 1$，那么 $\partial(h_1(x))+\partial(h_2(x)) = 0$.</p>
-<p>所以 $\partial(h_1(x)) = \partial(h_2(x))=0$.  那么 $c$ 取 $h_2(x)$ 即可.</p>
-<p><strong>整除性质2（传递性）</strong> 如果 $f(x)\mid g(x)$，$g(x)\mid h(x)$，那么 $f(x)\mid h(x)$.</p>
-<p><strong>证明</strong> 根据整除定义简单验证即可.</p>
-<p><strong>整除性质3</strong> 如果 $f(x)\mid g_i(x),\quad i=1,2,3,\cdots,r$，那么</p>
-<p>$$f(x)\mid \sum_{i=1}^{r}u_i(x)g_i(x).$$</p>
-<p>其中 $u_i(x)\in P[x]$.</p>
-<p><strong>证明</strong> 对任意 正整数$1\leq i\leq r$，存在 $h_i(x)\in P[x]$，使得 $g_i(x) = f(x)h_i(x)$.</p>
-<p>所以 $\sum_{i=1}^{r}u_i(x)g_i(x) = \sum_{i=1}^{r}u_i(x)h_i(x)f(x) = f(x)\sum_{i=1}^{r}u_i(x)h_i(x)$.</p>
+<p>和关联式容器一样，无序容器也使用键值对（pair 类型）的方式存储数据。不过，它们有本质上的不同：</p>
+<ul>
+<li>关联式容器的底层实现采用的树存储结构，更确切的说是红黑树结构；</li>
+<li>无序容器的底层实现采用的是哈希表的存储结构。</li>
+</ul>
+<blockquote>
+<p>C++ STL 底层采用哈希表实现无序容器时，会将所有数据存储到一整块连续的内存空间中，并且当数据存储位置发生冲突时，解决方法选用的是“链地址法”（又称“开链法”）。有关哈希表存储结构，读者可阅读《<a href="http://c.biancheng.net/view/3437.html">哈希表(散列表)详解</a>》一文做详细了解。</p>
+</blockquote>
+<p>基于底层实现采用了不同的<a href="http://c.biancheng.net/data_structure/">数据结构</a>，因此和关联式容器相比，无序容器具有以下 2 个特点：</p>
+<ol>
+<li>
+<p>无序容器内部存储的键值对是无序的，各键值对的存储位置取决于该键值对中的键，</p>
+</li>
+<li>
+<p>和关联式容器相比，无序容器擅长通过指定键查找对应的值（平均时间复杂度为 O(1)）；但对于使用迭代器遍历容器中存储的元素，无序容器的执行效率则不如关联式容器。</p>
+</li>
+</ol>
+<p>和关联式容器一样，无序容器只是一类容器的统称，其包含有 4 个具体容器，分别为 unordered_map、unordered_multimap、unordered_set 以及 unordered_multiset。</p>
+<p>​	表 1 对这 4 种无序容器的功能做了详细的介绍。</p>
+<table>
+<thead>
+<tr>
+<th>无序容器</th>
+<th>功能</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>unordered_map</td>
+<td>存储键值对 &lt;key, value&gt; 类型的元素，其中各个键值对键的值不允许重复，且该容器中存储的键值对是无序的。</td>
+</tr>
+<tr>
+<td>unordered_multimap</td>
+<td>和 unordered_map 唯一的区别在于，该容器允许存储多个键相同的键值对。</td>
+</tr>
+<tr>
+<td>unordered_set</td>
+<td>不再以键值对的形式存储数据，而是直接存储数据元素本身（当然也可以理解为，该容器存储的全部都是键 key 和值 value 相等的键值对，正因为它们相等，因此只存储 value 即可）。另外，该容器存储的元素不能重复，且容器内部存储的元素也是无序的。</td>
+</tr>
+<tr>
+<td>unordered_multiset</td>
+<td>和 unordered_set 唯一的区别在于，该容器允许存储值相同的元素。</td>
+</tr>
+</tbody>
+</table>
+<h3 id="unordered_set">unordered_set</h3>
+<p><strong>使用unordered_set 读写效率是最高的，并不需要对数据进行排序，而且还不要让数据重复，此时unordered_set。</strong></p>
+<p>unordered_set 类模板中，提供了如表 2 所示的成员方法。</p>
+<table>
+<thead>
+<tr>
+<th>成员方法</th>
+<th>功能</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>begin()</td>
+<td>返回指向容器中第一个元素的正向迭代器。</td>
+</tr>
+<tr>
+<td>end();</td>
+<td>返回指向容器中最后一个元素之后位置的正向迭代器。</td>
+</tr>
+<tr>
+<td>cbegin()</td>
+<td>和 begin() 功能相同，只不过其返回的是 const 类型的正向迭代器。</td>
+</tr>
+<tr>
+<td>cend()</td>
+<td>和 end() 功能相同，只不过其返回的是 const 类型的正向迭代器。</td>
+</tr>
+<tr>
+<td>empty()</td>
+<td>若容器为空，则返回 true；否则 false。</td>
+</tr>
+<tr>
+<td>size()</td>
+<td>返回当前容器中存有元素的个数。</td>
+</tr>
+<tr>
+<td>max_size()</td>
+<td>返回容器所能容纳元素的最大个数，不同的操作系统，其返回值亦不相同。</td>
+</tr>
+<tr>
+<td>find(key)</td>
+<td>查找以值为 key 的元素，如果找到，则返回一个指向该元素的正向迭代器；反之，则返回一个指向容器中最后一个元素之后位置的迭代器（如果 end() 方法返回的迭代器）。</td>
+</tr>
+<tr>
+<td>count(key)</td>
+<td>在容器中查找值为 key 的元素的个数。</td>
+</tr>
+<tr>
+<td>equal_range(key)</td>
+<td>返回一个 pair 对象，其包含 2 个迭代器，用于表明当前容器中值为 key 的元素所在的范围。</td>
+</tr>
+<tr>
+<td>emplace()</td>
+<td>向容器中添加新元素，效率比 insert() 方法高。</td>
+</tr>
+<tr>
+<td>emplace_hint()</td>
+<td>向容器中添加新元素，效率比 insert() 方法高。</td>
+</tr>
+<tr>
+<td>insert()</td>
+<td>向容器中添加新元素。</td>
+</tr>
+<tr>
+<td>erase()</td>
+<td>删除指定元素。</td>
+</tr>
+<tr>
+<td>clear()</td>
+<td>清空容器，即删除容器中存储的所有元素。</td>
+</tr>
+<tr>
+<td>swap()</td>
+<td>交换 2 个 unordered_set 容器存储的元素，前提是必须保证这 2 个容器的类型完全相等。</td>
+</tr>
+<tr>
+<td>bucket_count()</td>
+<td>返回当前容器底层存储元素时，使用桶（一个线性链表代表一个桶）的数量。</td>
+</tr>
+<tr>
+<td>max_bucket_count()</td>
+<td>返回当前系统中，unordered_set 容器底层最多可以使用多少桶。</td>
+</tr>
+<tr>
+<td>bucket_size(n)</td>
+<td>返回第 n 个桶中存储元素的数量。</td>
+</tr>
+<tr>
+<td>bucket(key)</td>
+<td>返回值为 key 的元素所在桶的编号。</td>
+</tr>
+<tr>
+<td>load_factor()</td>
+<td>返回 unordered_set 容器中当前的负载因子。负载因子，指的是的当前容器中存储元素的数量（size()）和使用桶数（bucket_count()）的比值，即 load_factor() = size() / bucket_count()。</td>
+</tr>
+<tr>
+<td>max_load_factor()</td>
+<td>返回或者设置当前 unordered_set 容器的负载因子。</td>
+</tr>
+<tr>
+<td>rehash(n)</td>
+<td>将当前容器底层使用桶的数量设置为 n。</td>
+</tr>
+<tr>
+<td>reserve()</td>
+<td>将存储桶的数量（也就是 bucket_count() 方法的返回值）设置为至少容纳 count 个元（不超过最大负载因子）所需的数量，并重新整理容器。</td>
+</tr>
+<tr>
+<td>hash_function()</td>
+<td>返回当前容器使用的哈希函数对象。</td>
+</tr>
+</tbody>
+</table>
+<h3 id="unordered_map">unordered_map</h3>
+<p>C++ STL 标准库中，unordered_map 容器迭代器的类型为前向迭代器（又称正向迭代器）。这意味着，假设 p 是一个前向迭代器，则其只能进行 *p、p++、++p 操作，且 2 个前向迭代器之间只能用 == 和 != 运算符做比较。</p>
+<p>以下是C++ unordered_map迭代器相关成员方法</p>
+<table>
+<thead>
+<tr>
+<th>成员方法</th>
+<th>功能</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>begin()</td>
+<td>返回指向容器中第一个键值对的正向迭代器。</td>
+</tr>
+<tr>
+<td>end()</td>
+<td>返回指向容器中最后一个键值对之后位置的正向迭代器。</td>
+</tr>
+<tr>
+<td>cbegin()</td>
+<td>和 begin() 功能相同，只不过在其基础上增加了 const 属性，即该方法返回的迭代器不能用于修改容器内存储的键值对。</td>
+</tr>
+<tr>
+<td>cend()</td>
+<td>和 end() 功能相同，只不过在其基础上，增加了 const 属性，即该方法返回的迭代器不能用于修改容器内存储的键值对。</td>
+</tr>
+<tr>
+<td>find(key)</td>
+<td>查找以 key 为键的键值对，如果找到，则返回一个指向该键值对的正向迭代器；反之，则返回一个指向容器中最后一个键值对之后位置的迭代器（如果 end() 方法返回的迭代器）。</td>
+</tr>
+</tbody>
+</table>
+<h3 id="c中map">C++中map</h3>
+<table>
+<thead>
+<tr>
+<th>映射</th>
+<th>底层实现</th>
+<th>是否有序</th>
+<th>数值是否可以重复</th>
+<th>能否更改数值</th>
+<th>查询效率</th>
+<th>增删效率</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>std::map</td>
+<td>红黑树</td>
+<td>key有序</td>
+<td>key不可重复</td>
+<td>key不可修改</td>
+<td>O(log n)</td>
+<td>O(log n)</td>
+</tr>
+<tr>
+<td>std::multimap</td>
+<td>红黑树</td>
+<td>key有序</td>
+<td>key可重复</td>
+<td>key不可修改</td>
+<td>O(log n)</td>
+<td>O(log n)</td>
+</tr>
+<tr>
+<td>std::unordered_map</td>
+<td>哈希表</td>
+<td>key无序</td>
+<td>key不可重复</td>
+<td>key不可修改</td>
+<td>O(1)</td>
+<td>O(1)</td>
+</tr>
+</tbody>
+</table>
+<p>std::unordered_map 底层实现为哈希表，std::map 和std::multimap 的底层实现是红黑树。</p>
+<p>同理，std::map 和std::multimap 的key也是有序的（这个问题也经常作为面试题，考察对语言容器底层的理解）。</p>
         </div>
 
         
@@ -368,31 +581,15 @@ $$f(x) = g(x)h(x).$$
 
 
         <footer class="post-footer">
-          <div class="post-tags">
-              <a href="http://04872.github.io/tags/%E5%A4%9A%E9%A1%B9%E5%BC%8F/">多项式</a>
-                
-            </div>
+          
 
 
           
           <nav class="post-nav">
             
-              <a class="prev" href="/post/%E5%93%88%E5%B8%8C%E8%A1%A8%E7%AB%A0%E8%8A%82%E6%89%80%E7%94%A8%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/">
-                
-                <i class="iconfont">
-                  <svg  class="icon" viewBox="0 0 1024 1024" version="1.1"
-  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
-  width="18" height="18">
-  <path d="M691.908486 949.511495l75.369571-89.491197c10.963703-12.998035 10.285251-32.864502-1.499144-44.378743L479.499795 515.267417 757.434875 204.940602c11.338233-12.190647 11.035334-32.285311-0.638543-44.850487l-80.46666-86.564541c-11.680017-12.583596-30.356378-12.893658-41.662889-0.716314L257.233596 494.235404c-11.332093 12.183484-11.041474 32.266891 0.657986 44.844348l80.46666 86.564541c1.772366 1.910513 3.706415 3.533476 5.750981 4.877077l306.620399 321.703933C662.505829 963.726242 680.945807 962.528973 691.908486 949.511495z"></path>
-</svg>
-
-                </i>
-                <span class="prev-text nav-default">哈希表章节所用数据结构</span>
-                <span class="prev-text nav-mobile">上一篇</span>
-              </a>
             
-              <a class="next" href="/post/mysql%E9%94%81%E7%AE%80%E4%BB%8B/">
-                <span class="next-text nav-default">MySQL锁简介</span>
+              <a class="next" href="/post/%E5%A4%9A%E9%A1%B9%E5%BC%8F/">
+                <span class="next-text nav-default">多项式</span>
                 <span class="prev-text nav-mobile">下一篇</span>
                 
                 <i class="iconfont">
@@ -504,13 +701,6 @@ $$f(x) = g(x)h(x).$$
 
 
 
-  <script type="text/javascript">
-    window.MathJax = {
-      showProcessingMessages: false,
-      messageStyle: 'none'
-    };
-  </script>
-  <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=TeX-MML-AM_CHTML' async></script>
 
 
 

@@ -2,21 +2,273 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Lin</title>
-    <link>http:04872.github.io/</link>
+    <link>http://04872.github.io/</link>
     <description>Recent content on Lin</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Mon, 22 May 2023 21:24:01 +0800</lastBuildDate>
+    <lastBuildDate>Wed, 28 Jun 2023 19:45:18 +0800</lastBuildDate>
     
-        <atom:link href="http:04872.github.io/index.xml" rel="self" type="application/rss+xml" />
+        <atom:link href="http://04872.github.io/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
+      <title>哈希表章节所用数据结构</title>
+      <link>http://04872.github.io/post/%E5%93%88%E5%B8%8C%E8%A1%A8%E7%AB%A0%E8%8A%82%E6%89%80%E7%94%A8%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/</link>
+      <pubDate>Wed, 28 Jun 2023 19:45:18 +0800</pubDate>
+      
+      <guid>http://04872.github.io/post/%E5%93%88%E5%B8%8C%E8%A1%A8%E7%AB%A0%E8%8A%82%E6%89%80%E7%94%A8%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/</guid>
+      
+        <description>&lt;h1 id=&#34;unorder_map&#34;&gt;unorder_map&lt;/h1&gt;
+&lt;h2 id=&#34;无序关联式容器&#34;&gt;无序关联式容器&lt;/h2&gt;
+&lt;p&gt;​	一类“特殊”的关联式容器，它们常被称为“无序容器”、“哈希容器”或者“无序关联容器”。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;注意，无序容器是 &lt;a href=&#34;http://c.biancheng.net/cplus/&#34;&gt;C++&lt;/a&gt; 11 标准才正式引入到 &lt;a href=&#34;http://c.biancheng.net/stl/&#34;&gt;STL&lt;/a&gt; 标准库中的，这意味着如果要使用该类容器，则必须选择支持 C++ 11 标准的编译器。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;和关联式容器一样，无序容器也使用键值对（pair 类型）的方式存储数据。不过，它们有本质上的不同：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;关联式容器的底层实现采用的树存储结构，更确切的说是红黑树结构；&lt;/li&gt;
+&lt;li&gt;无序容器的底层实现采用的是哈希表的存储结构。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;blockquote&gt;
+&lt;p&gt;C++ STL 底层采用哈希表实现无序容器时，会将所有数据存储到一整块连续的内存空间中，并且当数据存储位置发生冲突时，解决方法选用的是“链地址法”（又称“开链法”）。有关哈希表存储结构，读者可阅读《&lt;a href=&#34;http://c.biancheng.net/view/3437.html&#34;&gt;哈希表(散列表)详解&lt;/a&gt;》一文做详细了解。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;基于底层实现采用了不同的&lt;a href=&#34;http://c.biancheng.net/data_structure/&#34;&gt;数据结构&lt;/a&gt;，因此和关联式容器相比，无序容器具有以下 2 个特点：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;无序容器内部存储的键值对是无序的，各键值对的存储位置取决于该键值对中的键，&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;和关联式容器相比，无序容器擅长通过指定键查找对应的值（平均时间复杂度为 O(1)）；但对于使用迭代器遍历容器中存储的元素，无序容器的执行效率则不如关联式容器。&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;和关联式容器一样，无序容器只是一类容器的统称，其包含有 4 个具体容器，分别为 unordered_map、unordered_multimap、unordered_set 以及 unordered_multiset。&lt;/p&gt;
+&lt;p&gt;​	表 1 对这 4 种无序容器的功能做了详细的介绍。&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;无序容器&lt;/th&gt;
+&lt;th&gt;功能&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;unordered_map&lt;/td&gt;
+&lt;td&gt;存储键值对 &amp;lt;key, value&amp;gt; 类型的元素，其中各个键值对键的值不允许重复，且该容器中存储的键值对是无序的。&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;unordered_multimap&lt;/td&gt;
+&lt;td&gt;和 unordered_map 唯一的区别在于，该容器允许存储多个键相同的键值对。&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;unordered_set&lt;/td&gt;
+&lt;td&gt;不再以键值对的形式存储数据，而是直接存储数据元素本身（当然也可以理解为，该容器存储的全部都是键 key 和值 value 相等的键值对，正因为它们相等，因此只存储 value 即可）。另外，该容器存储的元素不能重复，且容器内部存储的元素也是无序的。&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;unordered_multiset&lt;/td&gt;
+&lt;td&gt;和 unordered_set 唯一的区别在于，该容器允许存储值相同的元素。&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h3 id=&#34;unordered_set&#34;&gt;unordered_set&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;使用unordered_set 读写效率是最高的，并不需要对数据进行排序，而且还不要让数据重复，此时unordered_set。&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;unordered_set 类模板中，提供了如表 2 所示的成员方法。&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;成员方法&lt;/th&gt;
+&lt;th&gt;功能&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;begin()&lt;/td&gt;
+&lt;td&gt;返回指向容器中第一个元素的正向迭代器。&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;end();&lt;/td&gt;
+&lt;td&gt;返回指向容器中最后一个元素之后位置的正向迭代器。&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;cbegin()&lt;/td&gt;
+&lt;td&gt;和 begin() 功能相同，只不过其返回的是 const 类型的正向迭代器。&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;cend()&lt;/td&gt;
+&lt;td&gt;和 end() 功能相同，只不过其返回的是 const 类型的正向迭代器。&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;empty()&lt;/td&gt;
+&lt;td&gt;若容器为空，则返回 true；否则 false。&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;size()&lt;/td&gt;
+&lt;td&gt;返回当前容器中存有元素的个数。&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;max_size()&lt;/td&gt;
+&lt;td&gt;返回容器所能容纳元素的最大个数，不同的操作系统，其返回值亦不相同。&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;find(key)&lt;/td&gt;
+&lt;td&gt;查找以值为 key 的元素，如果找到，则返回一个指向该元素的正向迭代器；反之，则返回一个指向容器中最后一个元素之后位置的迭代器（如果 end() 方法返回的迭代器）。&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;count(key)&lt;/td&gt;
+&lt;td&gt;在容器中查找值为 key 的元素的个数。&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;equal_range(key)&lt;/td&gt;
+&lt;td&gt;返回一个 pair 对象，其包含 2 个迭代器，用于表明当前容器中值为 key 的元素所在的范围。&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;emplace()&lt;/td&gt;
+&lt;td&gt;向容器中添加新元素，效率比 insert() 方法高。&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;emplace_hint()&lt;/td&gt;
+&lt;td&gt;向容器中添加新元素，效率比 insert() 方法高。&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;insert()&lt;/td&gt;
+&lt;td&gt;向容器中添加新元素。&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;erase()&lt;/td&gt;
+&lt;td&gt;删除指定元素。&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;clear()&lt;/td&gt;
+&lt;td&gt;清空容器，即删除容器中存储的所有元素。&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;swap()&lt;/td&gt;
+&lt;td&gt;交换 2 个 unordered_set 容器存储的元素，前提是必须保证这 2 个容器的类型完全相等。&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;bucket_count()&lt;/td&gt;
+&lt;td&gt;返回当前容器底层存储元素时，使用桶（一个线性链表代表一个桶）的数量。&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;max_bucket_count()&lt;/td&gt;
+&lt;td&gt;返回当前系统中，unordered_set 容器底层最多可以使用多少桶。&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;bucket_size(n)&lt;/td&gt;
+&lt;td&gt;返回第 n 个桶中存储元素的数量。&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;bucket(key)&lt;/td&gt;
+&lt;td&gt;返回值为 key 的元素所在桶的编号。&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;load_factor()&lt;/td&gt;
+&lt;td&gt;返回 unordered_set 容器中当前的负载因子。负载因子，指的是的当前容器中存储元素的数量（size()）和使用桶数（bucket_count()）的比值，即 load_factor() = size() / bucket_count()。&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;max_load_factor()&lt;/td&gt;
+&lt;td&gt;返回或者设置当前 unordered_set 容器的负载因子。&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;rehash(n)&lt;/td&gt;
+&lt;td&gt;将当前容器底层使用桶的数量设置为 n。&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;reserve()&lt;/td&gt;
+&lt;td&gt;将存储桶的数量（也就是 bucket_count() 方法的返回值）设置为至少容纳 count 个元（不超过最大负载因子）所需的数量，并重新整理容器。&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;hash_function()&lt;/td&gt;
+&lt;td&gt;返回当前容器使用的哈希函数对象。&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h3 id=&#34;unordered_map&#34;&gt;unordered_map&lt;/h3&gt;
+&lt;p&gt;C++ STL 标准库中，unordered_map 容器迭代器的类型为前向迭代器（又称正向迭代器）。这意味着，假设 p 是一个前向迭代器，则其只能进行 *p、p++、++p 操作，且 2 个前向迭代器之间只能用 == 和 != 运算符做比较。&lt;/p&gt;
+&lt;p&gt;以下是C++ unordered_map迭代器相关成员方法&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;成员方法&lt;/th&gt;
+&lt;th&gt;功能&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;begin()&lt;/td&gt;
+&lt;td&gt;返回指向容器中第一个键值对的正向迭代器。&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;end()&lt;/td&gt;
+&lt;td&gt;返回指向容器中最后一个键值对之后位置的正向迭代器。&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;cbegin()&lt;/td&gt;
+&lt;td&gt;和 begin() 功能相同，只不过在其基础上增加了 const 属性，即该方法返回的迭代器不能用于修改容器内存储的键值对。&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;cend()&lt;/td&gt;
+&lt;td&gt;和 end() 功能相同，只不过在其基础上，增加了 const 属性，即该方法返回的迭代器不能用于修改容器内存储的键值对。&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;find(key)&lt;/td&gt;
+&lt;td&gt;查找以 key 为键的键值对，如果找到，则返回一个指向该键值对的正向迭代器；反之，则返回一个指向容器中最后一个键值对之后位置的迭代器（如果 end() 方法返回的迭代器）。&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h3 id=&#34;c中map&#34;&gt;C++中map&lt;/h3&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;映射&lt;/th&gt;
+&lt;th&gt;底层实现&lt;/th&gt;
+&lt;th&gt;是否有序&lt;/th&gt;
+&lt;th&gt;数值是否可以重复&lt;/th&gt;
+&lt;th&gt;能否更改数值&lt;/th&gt;
+&lt;th&gt;查询效率&lt;/th&gt;
+&lt;th&gt;增删效率&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;std::map&lt;/td&gt;
+&lt;td&gt;红黑树&lt;/td&gt;
+&lt;td&gt;key有序&lt;/td&gt;
+&lt;td&gt;key不可重复&lt;/td&gt;
+&lt;td&gt;key不可修改&lt;/td&gt;
+&lt;td&gt;O(log n)&lt;/td&gt;
+&lt;td&gt;O(log n)&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;std::multimap&lt;/td&gt;
+&lt;td&gt;红黑树&lt;/td&gt;
+&lt;td&gt;key有序&lt;/td&gt;
+&lt;td&gt;key可重复&lt;/td&gt;
+&lt;td&gt;key不可修改&lt;/td&gt;
+&lt;td&gt;O(log n)&lt;/td&gt;
+&lt;td&gt;O(log n)&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;std::unordered_map&lt;/td&gt;
+&lt;td&gt;哈希表&lt;/td&gt;
+&lt;td&gt;key无序&lt;/td&gt;
+&lt;td&gt;key不可重复&lt;/td&gt;
+&lt;td&gt;key不可修改&lt;/td&gt;
+&lt;td&gt;O(1)&lt;/td&gt;
+&lt;td&gt;O(1)&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;std::unordered_map 底层实现为哈希表，std::map 和std::multimap 的底层实现是红黑树。&lt;/p&gt;
+&lt;p&gt;同理，std::map 和std::multimap 的key也是有序的（这个问题也经常作为面试题，考察对语言容器底层的理解）。&lt;/p&gt;</description>
+      
+    </item>
+    
+    <item>
       <title>多项式</title>
-      <link>http:04872.github.io/post/%E5%A4%9A%E9%A1%B9%E5%BC%8F/</link>
+      <link>http://04872.github.io/post/%E5%A4%9A%E9%A1%B9%E5%BC%8F/</link>
       <pubDate>Mon, 22 May 2023 21:24:01 +0800</pubDate>
       
-      <guid>http:04872.github.io/post/%E5%A4%9A%E9%A1%B9%E5%BC%8F/</guid>
+      <guid>http://04872.github.io/post/%E5%A4%9A%E9%A1%B9%E5%BC%8F/</guid>
       
         <description>&lt;h1 id=&#34;整除&#34;&gt;整除&lt;/h1&gt;
 &lt;p&gt;&lt;strong&gt;带余除法&lt;/strong&gt; 对于 $P[x]$ 上的任意两个多项式 $f(x)$ 和 $g(x)$，其中 $g(x)\neq 0$，则一定有 $P[x]$ 中的多项式 $q(x)$、$r(x)$ 存在，使得
@@ -49,10 +301,10 @@ $$f(x) = g(x)h(x).$$
     
     <item>
       <title>MySQL锁简介</title>
-      <link>http:04872.github.io/post/mysql%E9%94%81%E7%AE%80%E4%BB%8B/</link>
+      <link>http://04872.github.io/post/mysql%E9%94%81%E7%AE%80%E4%BB%8B/</link>
       <pubDate>Wed, 19 Apr 2023 18:37:55 +0800</pubDate>
       
-      <guid>http:04872.github.io/post/mysql%E9%94%81%E7%AE%80%E4%BB%8B/</guid>
+      <guid>http://04872.github.io/post/mysql%E9%94%81%E7%AE%80%E4%BB%8B/</guid>
       
         <description>&lt;h1 id=&#34;mysql的各种锁简介&#34;&gt;MySQL的各种锁简介&lt;/h1&gt;
 &lt;h2 id=&#34;一全局锁&#34;&gt;一、全局锁&lt;/h2&gt;
@@ -148,10 +400,10 @@ $$f(x) = g(x)h(x).$$
     
     <item>
       <title>MySQL索引面试题</title>
-      <link>http:04872.github.io/post/mysql%E7%B4%A2%E5%BC%95%E9%9D%A2%E8%AF%95%E9%A2%98/</link>
+      <link>http://04872.github.io/post/mysql%E7%B4%A2%E5%BC%95%E9%9D%A2%E8%AF%95%E9%A2%98/</link>
       <pubDate>Mon, 17 Apr 2023 14:54:46 +0800</pubDate>
       
-      <guid>http:04872.github.io/post/mysql%E7%B4%A2%E5%BC%95%E9%9D%A2%E8%AF%95%E9%A2%98/</guid>
+      <guid>http://04872.github.io/post/mysql%E7%B4%A2%E5%BC%95%E9%9D%A2%E8%AF%95%E9%A2%98/</guid>
       
         <description>&lt;h1 id=&#34;mysql索引面试题&#34;&gt;MySQL索引面试题&lt;/h1&gt;
 &lt;h3 id=&#34;1-索引分类&#34;&gt;1. &lt;strong&gt;索引分类&lt;/strong&gt;&lt;/h3&gt;
@@ -291,10 +543,10 @@ $$f(x) = g(x)h(x).$$
     
     <item>
       <title>项目简介</title>
-      <link>http:04872.github.io/post/%E9%A1%B9%E7%9B%AE%E7%AE%80%E4%BB%8B/</link>
+      <link>http://04872.github.io/post/%E9%A1%B9%E7%9B%AE%E7%AE%80%E4%BB%8B/</link>
       <pubDate>Tue, 11 Apr 2023 15:49:57 +0800</pubDate>
       
-      <guid>http:04872.github.io/post/%E9%A1%B9%E7%9B%AE%E7%AE%80%E4%BB%8B/</guid>
+      <guid>http://04872.github.io/post/%E9%A1%B9%E7%9B%AE%E7%AE%80%E4%BB%8B/</guid>
       
         <description>&lt;h2 id=&#34;项目介绍&#34;&gt;&lt;strong&gt;项目介绍&lt;/strong&gt;&lt;/h2&gt;
 &lt;ul&gt;

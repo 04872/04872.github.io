@@ -259,7 +259,26 @@
 &lt;/tbody&gt;
 &lt;/table&gt;
 &lt;p&gt;std::unordered_map 底层实现为哈希表，std::map 和std::multimap 的底层实现是红黑树。&lt;/p&gt;
-&lt;p&gt;同理，std::map 和std::multimap 的key也是有序的（这个问题也经常作为面试题，考察对语言容器底层的理解）。&lt;/p&gt;</description>
+&lt;p&gt;同理，std::map 和std::multimap 的key也是有序的（这个问题也经常作为面试题，考察对语言容器底层的理解）。&lt;/p&gt;
+&lt;h3 id=&#34;c-string&#34;&gt;C++ string&lt;/h3&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th style=&#34;text-align:center&#34;&gt;成员方法&lt;/th&gt;
+&lt;th style=&#34;text-align:center&#34;&gt;功能&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;resize(n)&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;将string容量修改为n&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;reverse(left,right)&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;反转[left,right)之间的字符串，left为迭代器&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;</description>
       
     </item>
     

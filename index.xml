@@ -20,9 +20,9 @@
       
         <description>&lt;h1 id=&#34;矩阵及其初等行变换&#34;&gt;矩阵及其初等行变换&lt;/h1&gt;
 &lt;p&gt;$$
-\begin{theorem}
+\begin{equation}
 这是一个定理的内容。
-\end{theorem}
+\end{equation}
 $$&lt;/p&gt;</description>
       
     </item>

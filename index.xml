@@ -6,10 +6,26 @@
     <description>Recent content on Lin</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Wed, 28 Jun 2023 19:45:18 +0800</lastBuildDate>
+    <lastBuildDate>Wed, 12 Jul 2023 21:23:37 +0800</lastBuildDate>
     
         <atom:link href="http://04872.github.io/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>线性方程组的求解</title>
+      <link>http://04872.github.io/post/%E7%BA%BF%E6%80%A7%E6%96%B9%E7%A8%8B%E7%BB%84%E7%9A%84%E6%B1%82%E8%A7%A3/</link>
+      <pubDate>Wed, 12 Jul 2023 21:23:37 +0800</pubDate>
+      
+      <guid>http://04872.github.io/post/%E7%BA%BF%E6%80%A7%E6%96%B9%E7%A8%8B%E7%BB%84%E7%9A%84%E6%B1%82%E8%A7%A3/</guid>
+      
+        <description>&lt;h1 id=&#34;矩阵及其初等行变换&#34;&gt;矩阵及其初等行变换&lt;/h1&gt;
+&lt;p&gt;$$
+\begin{theorem}
+这是一个定理的内容。
+\end{theorem}
+$$&lt;/p&gt;</description>
+      
+    </item>
     
     <item>
       <title>哈希表章节所用数据结构</title>
@@ -290,29 +306,29 @@
       <guid>http://04872.github.io/post/%E5%A4%9A%E9%A1%B9%E5%BC%8F/</guid>
       
         <description>&lt;h1 id=&#34;整除&#34;&gt;整除&lt;/h1&gt;
-&lt;p&gt;&lt;strong&gt;带余除法&lt;/strong&gt; 对于 $P[x]$ 上的任意两个多项式 $f(x)$ 和 $g(x)$，其中 $g(x)\neq 0$，则一定有 $P[x]$ 中的多项式 $q(x)$、$r(x)$ 存在，使得
-$$f(x) = q(x)g(x)+r(x).$$
+&lt;p&gt;&lt;strong&gt;带余除法&lt;/strong&gt; &lt;em&gt;对于 $P[x]$ 上的任意两个多项式 $f(x)$ 和 $g(x)$，其中 $g(x)\neq 0$，则一定有 $P[x]$ 中的多项式 $q(x)$、$r(x)$ 存在，使得&lt;/em&gt;
+&lt;em&gt;$$f(x) = q(x)g(x)+r(x).$$&lt;/em&gt;
 &lt;strong&gt;证明&lt;/strong&gt; : 过程就是带余除法的过程.&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;定义1&lt;/strong&gt; 称数域 $P$ 上的多项式  $g(x)$ 整除 $f(x)$ ，如果有数域 $P$ 上的多项式 $h(x)$ 使得
-$$f(x) = g(x)h(x).$$
-我们用 “$g(x)\mid f(x)$” 表示 $g(x)$ 整除 $f(x)$，用 “$g(x)\nmid f(x)$” 表示 $g(x)$ 不整除 $f(x)$.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;定义1&lt;/strong&gt; &lt;em&gt;称数域 $P$ 上的多项式  $g(x)$ 整除 $f(x)$ ，如果有数域 $P$ 上的多项式 $h(x)$ 使得&lt;/em&gt;
+&lt;em&gt;$$f(x) = g(x)h(x).$$&lt;/em&gt;
+&lt;em&gt;我们用 “$g(x)\mid f(x)$” 表示 $g(x)$ 整除 $f(x)$，用 “$g(x)\nmid f(x)$” 表示 $g(x)$ 不整除 $f(x)$.&lt;/em&gt;&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;&lt;!-- raw HTML omitted --&gt;&lt;strong&gt;整除关系不随数域的改变而改变&lt;/strong&gt;&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;p&gt;&lt;strong&gt;定理1&lt;/strong&gt; 对于数域 $P$ 上的任意两个多项式 $f(x)$，$g(x)$，其中 $g(x)\neq 0$, $g(x)\mid f(x)$ 的充要条件是 $g(x)$ 除 $f(x)$ 的余数是零.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;定理1&lt;/strong&gt; &lt;em&gt;对于数域 $P$ 上的任意两个多项式 $f(x)$，$g(x)$，其中 $g(x)\neq 0$, $g(x)\mid f(x)$ 的充要条件是 $g(x)$ 除 $f(x)$ 的余数是零.&lt;/em&gt;&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;证明&lt;/strong&gt; 充分性：如果 $r(x)=0$，那么 $f(x) = q(x)g(x)$，所以整除.
 必要性：根据整除定义，$f(x) = q(x)g(x)=q(x)g(x)+0$.&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;整除性质1&lt;/strong&gt; 如果 $f(x)$ 和 $g(x)$ 相互整除，那么存在非零常数 $c$，使得 $f(x)=cg(x)$.&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;证明&lt;/strong&gt; 有 $f(x)h_1(x) = g(x)$，$g(x)h_2(x)=f(x)$.
-​		$\Rightarrow f(x)h_1(x)h_2(x) = f(x)$.
-​		如果 $f(x)=0$，那么 $g(x) = 0$，命题显然成立.
-​		如果 $f(x)\neq 0$，由多项式乘法消去律消去 $f(x)$ 得，$h_1(x)h_2(x) = 1$，那么 $\partial(h_1(x))+\partial(h_2(x)) = 0$.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;整除性质1&lt;/strong&gt; &lt;em&gt;如果 $f(x)$ 和 $g(x)$ 相互整除，那么存在非零常数 $c$，使得 $f(x)=cg(x)$.&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;证明&lt;/strong&gt; 有 $f(x)h_1(x) = g(x)$，$g(x)h_2(x)=f(x)$.&lt;/p&gt;
+&lt;p&gt;​		$\Rightarrow f(x)h_1(x)h_2(x) = f(x)$.
+​		如果 $f(x)=0$，那么 $g(x) = 0$，命题显然成立.&lt;/p&gt;
+&lt;p&gt;​		如果 $f(x)\neq 0$，由多项式乘法消去律消去 $f(x)$ 得，$h_1(x)h_2(x) = 1$，那么 $\partial(h_1(x))+\partial(h_2(x)) = 0$.&lt;/p&gt;
 &lt;p&gt;所以 $\partial(h_1(x)) = \partial(h_2(x))=0$.  那么 $c$ 取 $h_2(x)$ 即可.&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;整除性质2（传递性）&lt;/strong&gt; 如果 $f(x)\mid g(x)$，$g(x)\mid h(x)$，那么 $f(x)\mid h(x)$.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;整除性质2（传递性）&lt;/strong&gt; &lt;em&gt;如果 $f(x)\mid g(x)$，$g(x)\mid h(x)$，那么 $f(x)\mid h(x)$.&lt;/em&gt;&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;证明&lt;/strong&gt; 根据整除定义简单验证即可.&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;整除性质3&lt;/strong&gt; 如果 $f(x)\mid g_i(x),\quad i=1,2,3,\cdots,r$，那么&lt;/p&gt;
-&lt;p&gt;$$f(x)\mid \sum_{i=1}^{r}u_i(x)g_i(x).$$&lt;/p&gt;
-&lt;p&gt;其中 $u_i(x)\in P[x]$.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;整除性质3&lt;/strong&gt; &lt;em&gt;如果 $f(x)\mid g_i(x),\quad i=1,2,3,\cdots,r$，那么&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;$$f(x)\mid \sum_{i=1}^{r}u_i(x)g_i(x).$$&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;其中 $u_i(x)\in P[x]$.&lt;/em&gt;&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;证明&lt;/strong&gt; 对任意 正整数$1\leq i\leq r$，存在 $h_i(x)\in P[x]$，使得 $g_i(x) = f(x)h_i(x)$.&lt;/p&gt;
 &lt;p&gt;所以 $\sum_{i=1}^{r}u_i(x)g_i(x) = \sum_{i=1}^{r}u_i(x)h_i(x)f(x) = f(x)\sum_{i=1}^{r}u_i(x)h_i(x)$.&lt;/p&gt;</description>
       

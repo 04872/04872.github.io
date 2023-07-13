@@ -2,35 +2,35 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Categories on Lin</title>
-    <link>http://04872.github.io/categories/</link>
+    <link>http%EF%BC%9A04872.github.io/categories/</link>
     <description>Recent content in Categories on Lin</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Wed, 12 Jul 2023 21:23:37 +0800</lastBuildDate><atom:link href="http://04872.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 12 Jul 2023 21:23:37 +0800</lastBuildDate><atom:link href="http%EF%BC%9A04872.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>高等代数</title>
-      <link>http://04872.github.io/categories/%E9%AB%98%E7%AD%89%E4%BB%A3%E6%95%B0/</link>
+      <link>http%EF%BC%9A04872.github.io/categories/%E9%AB%98%E7%AD%89%E4%BB%A3%E6%95%B0/</link>
       <pubDate>Wed, 12 Jul 2023 21:23:37 +0800</pubDate>
       
-      <guid>http://04872.github.io/categories/%E9%AB%98%E7%AD%89%E4%BB%A3%E6%95%B0/</guid>
+      <guid>http%EF%BC%9A04872.github.io/categories/%E9%AB%98%E7%AD%89%E4%BB%A3%E6%95%B0/</guid>
       <description></description>
     </item>
     
     <item>
       <title>MySQL</title>
-      <link>http://04872.github.io/categories/mysql/</link>
+      <link>http%EF%BC%9A04872.github.io/categories/mysql/</link>
       <pubDate>Wed, 19 Apr 2023 18:37:55 +0800</pubDate>
       
-      <guid>http://04872.github.io/categories/mysql/</guid>
+      <guid>http%EF%BC%9A04872.github.io/categories/mysql/</guid>
       <description></description>
     </item>
     
     <item>
       <title>WebServer</title>
-      <link>http://04872.github.io/categories/webserver/</link>
+      <link>http%EF%BC%9A04872.github.io/categories/webserver/</link>
       <pubDate>Tue, 11 Apr 2023 15:49:57 +0800</pubDate>
       
-      <guid>http://04872.github.io/categories/webserver/</guid>
+      <guid>http%EF%BC%9A04872.github.io/categories/webserver/</guid>
       <description></description>
     </item>
     

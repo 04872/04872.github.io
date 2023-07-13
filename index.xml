@@ -2,37 +2,44 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Lin</title>
-    <link>http://04872.github.io/</link>
+    <link>http%EF%BC%9A04872.github.io/</link>
     <description>Recent content on Lin</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
     <lastBuildDate>Wed, 12 Jul 2023 21:23:37 +0800</lastBuildDate>
     
-        <atom:link href="http://04872.github.io/index.xml" rel="self" type="application/rss+xml" />
+        <atom:link href="http%EF%BC%9A04872.github.io/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>线性方程组的求解</title>
-      <link>http://04872.github.io/post/%E7%BA%BF%E6%80%A7%E6%96%B9%E7%A8%8B%E7%BB%84%E7%9A%84%E6%B1%82%E8%A7%A3/</link>
+      <link>http%EF%BC%9A04872.github.io/post/%E7%BA%BF%E6%80%A7%E6%96%B9%E7%A8%8B%E7%BB%84%E7%9A%84%E6%B1%82%E8%A7%A3/</link>
       <pubDate>Wed, 12 Jul 2023 21:23:37 +0800</pubDate>
       
-      <guid>http://04872.github.io/post/%E7%BA%BF%E6%80%A7%E6%96%B9%E7%A8%8B%E7%BB%84%E7%9A%84%E6%B1%82%E8%A7%A3/</guid>
+      <guid>http%EF%BC%9A04872.github.io/post/%E7%BA%BF%E6%80%A7%E6%96%B9%E7%A8%8B%E7%BB%84%E7%9A%84%E6%B1%82%E8%A7%A3/</guid>
       
-        <description>&lt;h1 id=&#34;矩阵及其初等行变换&#34;&gt;矩阵及其初等行变换&lt;/h1&gt;
+        <description>&lt;!-- raw HTML omitted --&gt;
+&lt;h1 id=&#34;矩阵及其初等行变换&#34;&gt;矩阵及其初等行变换&lt;/h1&gt;
 &lt;p&gt;$$
 \begin{equation}
-这是一个定理的内容。
+对于 P[x] 上的任意两个多项式 f(x) 和 g(x)，其中 g(x)\neq 0，则一定有 P[x] 中的多项式 q(x)、r(x) 存在，使得
+f(x) = q(x)g(x)+r(x).
 \end{equation}
+$$&lt;/p&gt;
+&lt;p&gt;$$
+\begin{theorem}
+证明
+\end{theorem}
 $$&lt;/p&gt;</description>
       
     </item>
     
     <item>
       <title>哈希表章节所用数据结构</title>
-      <link>http://04872.github.io/post/%E5%93%88%E5%B8%8C%E8%A1%A8%E7%AB%A0%E8%8A%82%E6%89%80%E7%94%A8%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/</link>
+      <link>http%EF%BC%9A04872.github.io/post/%E5%93%88%E5%B8%8C%E8%A1%A8%E7%AB%A0%E8%8A%82%E6%89%80%E7%94%A8%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/</link>
       <pubDate>Wed, 28 Jun 2023 19:45:18 +0800</pubDate>
       
-      <guid>http://04872.github.io/post/%E5%93%88%E5%B8%8C%E8%A1%A8%E7%AB%A0%E8%8A%82%E6%89%80%E7%94%A8%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/</guid>
+      <guid>http%EF%BC%9A04872.github.io/post/%E5%93%88%E5%B8%8C%E8%A1%A8%E7%AB%A0%E8%8A%82%E6%89%80%E7%94%A8%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/</guid>
       
         <description>&lt;h1 id=&#34;unorder_map&#34;&gt;unorder_map&lt;/h1&gt;
 &lt;h2 id=&#34;无序关联式容器&#34;&gt;无序关联式容器&lt;/h2&gt;
@@ -300,10 +307,10 @@ $$&lt;/p&gt;</description>
     
     <item>
       <title>多项式</title>
-      <link>http://04872.github.io/post/%E5%A4%9A%E9%A1%B9%E5%BC%8F/</link>
+      <link>http%EF%BC%9A04872.github.io/post/%E5%A4%9A%E9%A1%B9%E5%BC%8F/</link>
       <pubDate>Mon, 22 May 2023 21:24:01 +0800</pubDate>
       
-      <guid>http://04872.github.io/post/%E5%A4%9A%E9%A1%B9%E5%BC%8F/</guid>
+      <guid>http%EF%BC%9A04872.github.io/post/%E5%A4%9A%E9%A1%B9%E5%BC%8F/</guid>
       
         <description>&lt;h1 id=&#34;整除&#34;&gt;整除&lt;/h1&gt;
 &lt;p&gt;&lt;strong&gt;带余除法&lt;/strong&gt; &lt;em&gt;对于 $P[x]$ 上的任意两个多项式 $f(x)$ 和 $g(x)$，其中 $g(x)\neq 0$，则一定有 $P[x]$ 中的多项式 $q(x)$、$r(x)$ 存在，使得&lt;/em&gt;
@@ -336,10 +343,10 @@ $$&lt;/p&gt;</description>
     
     <item>
       <title>MySQL锁简介</title>
-      <link>http://04872.github.io/post/mysql%E9%94%81%E7%AE%80%E4%BB%8B/</link>
+      <link>http%EF%BC%9A04872.github.io/post/mysql%E9%94%81%E7%AE%80%E4%BB%8B/</link>
       <pubDate>Wed, 19 Apr 2023 18:37:55 +0800</pubDate>
       
-      <guid>http://04872.github.io/post/mysql%E9%94%81%E7%AE%80%E4%BB%8B/</guid>
+      <guid>http%EF%BC%9A04872.github.io/post/mysql%E9%94%81%E7%AE%80%E4%BB%8B/</guid>
       
         <description>&lt;h1 id=&#34;mysql的各种锁简介&#34;&gt;MySQL的各种锁简介&lt;/h1&gt;
 &lt;h2 id=&#34;一全局锁&#34;&gt;一、全局锁&lt;/h2&gt;
@@ -435,10 +442,10 @@ $$&lt;/p&gt;</description>
     
     <item>
       <title>MySQL索引面试题</title>
-      <link>http://04872.github.io/post/mysql%E7%B4%A2%E5%BC%95%E9%9D%A2%E8%AF%95%E9%A2%98/</link>
+      <link>http%EF%BC%9A04872.github.io/post/mysql%E7%B4%A2%E5%BC%95%E9%9D%A2%E8%AF%95%E9%A2%98/</link>
       <pubDate>Mon, 17 Apr 2023 14:54:46 +0800</pubDate>
       
-      <guid>http://04872.github.io/post/mysql%E7%B4%A2%E5%BC%95%E9%9D%A2%E8%AF%95%E9%A2%98/</guid>
+      <guid>http%EF%BC%9A04872.github.io/post/mysql%E7%B4%A2%E5%BC%95%E9%9D%A2%E8%AF%95%E9%A2%98/</guid>
       
         <description>&lt;h1 id=&#34;mysql索引面试题&#34;&gt;MySQL索引面试题&lt;/h1&gt;
 &lt;h3 id=&#34;1-索引分类&#34;&gt;1. &lt;strong&gt;索引分类&lt;/strong&gt;&lt;/h3&gt;
@@ -578,10 +585,10 @@ $$&lt;/p&gt;</description>
     
     <item>
       <title>项目简介</title>
-      <link>http://04872.github.io/post/%E9%A1%B9%E7%9B%AE%E7%AE%80%E4%BB%8B/</link>
+      <link>http%EF%BC%9A04872.github.io/post/%E9%A1%B9%E7%9B%AE%E7%AE%80%E4%BB%8B/</link>
       <pubDate>Tue, 11 Apr 2023 15:49:57 +0800</pubDate>
       
-      <guid>http://04872.github.io/post/%E9%A1%B9%E7%9B%AE%E7%AE%80%E4%BB%8B/</guid>
+      <guid>http%EF%BC%9A04872.github.io/post/%E9%A1%B9%E7%9B%AE%E7%AE%80%E4%BB%8B/</guid>
       
         <description>&lt;h2 id=&#34;项目介绍&#34;&gt;&lt;strong&gt;项目介绍&lt;/strong&gt;&lt;/h2&gt;
 &lt;ul&gt;

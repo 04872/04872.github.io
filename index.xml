@@ -20,17 +20,39 @@
       
         <description>&lt;!-- raw HTML omitted --&gt;
 &lt;h1 id=&#34;矩阵及其初等行变换&#34;&gt;矩阵及其初等行变换&lt;/h1&gt;
-&lt;p&gt;$$
-\begin{equation}
-对于 P[x] 上的任意两个多项式 f(x) 和 g(x)，其中 g(x)\neq 0，则一定有 P[x] 中的多项式 q(x)、r(x) 存在，使得
-f(x) = q(x)g(x)+r(x).
-\end{equation}
-$$&lt;/p&gt;
-&lt;p&gt;$$
-\begin{theorem}
-证明
-\end{theorem}
-$$&lt;/p&gt;</description>
+&lt;!-- raw HTML omitted --&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;em&gt;矩阵的初等行变换中，对换变换可以通过倍乘变换和倍加变换来实现&lt;/em&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;其实任意一个矩阵$A = (a_{ij})&lt;em&gt;{n\times m}$都可以经过行的倍加变换化为行阶梯形矩阵。证明这个结论的关键在于：证明可以通过倍加行变换 “$r_j+kr_i$” 将$a&lt;/em&gt;{i1}(j\geq 2)$化为$0$，然后我们对矩阵的行数和列数作归纳。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;矩阵等价&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;如果一个矩阵可以经过初等变换化为另一个矩阵，则称这两个矩阵之间等价。&lt;/p&gt;
+&lt;h1 id=&#34;n维向量&#34;&gt;n维向量&lt;/h1&gt;
+&lt;h2 id=&#34;向量组的等价&#34;&gt;向量组的等价&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;线性表示&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;设向量$\alpha$和向量组$\beta_1,\beta_2,\ldots,\beta_n$，如果存在数$k_1,k_2,\ldots,k_n$使得成立&lt;/p&gt;
+&lt;p&gt;$$\alpha = \sum_{i=1}^{n}k_i\beta_i$$，&lt;/p&gt;
+&lt;p&gt;则称$\alpha$能由向量组$\beta_1,\beta_2,\ldots,\beta_n$线性表示。&lt;/p&gt;
+&lt;p&gt;如果向量组$\alpha_1,\alpha_2,\ldots,\alpha_n$中每个向量都能由向量组$\beta_1,\beta_2,\ldots,\beta_n$线性表示，则称$\alpha_1,\alpha_2,\ldots,\alpha_n$能由&lt;/p&gt;
+&lt;p&gt;$\beta_1,\beta-2,\ldots,\beta_n$线性表示。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;向量组等价&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;如果两组向量组可以相互线性表示，则称这两组向量组等价。容易验证，向量组的等价这一关系是一个等价关系。&lt;/p&gt;
+&lt;p&gt;同型的矩阵之间，如果列（行）向量组等价，那么这两个矩阵等价，反之不一定成立。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;线性相关&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;设向量组$\alpha_1,\alpha_2,\ldots,\alpha_s\in F^{n}$，如果存在不全为零的数$k_1，k_2,\ldots,k_s$，使得&lt;/p&gt;
+&lt;p&gt;$$k_1\alpha_2+k_2\alpha_2+\cdots+k_s\alpha_s=\theta$$&lt;/p&gt;
+&lt;p&gt;则称这个向量组线性相关，否则线性无关。&lt;/p&gt;
+&lt;p&gt;根据以上定义，我们可以得到以下常用结论&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;含有零向量的向量组一定线性相关。&lt;/li&gt;
+&lt;li&gt;单独一个向量$\alpha$线性相关$\Leftrightarrow \alpha = \theta$.&lt;/li&gt;
+&lt;li&gt;如果$\alpha_1,\alpha_2,\ldots,\alpha_s$线性相关，那么$\alpha_1,\alpha_2,\ldots,\alpha_s,\alpha_{s+1},\ldots,\alpha_t$线性相关.&lt;/li&gt;
+&lt;li&gt;如果$\alpha_1,\alpha_2,\ldots,\alpha_s,\alpha_{s+1},\ldots,\alpha_t$线性无关，那么$\alpha_1,\alpha_2,\ldots,\alpha_s$线性无关.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;strong&gt;定理1&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;向量组$\alpha_1,\alpha_2,\ldots,\alpha_s(s\geq 2)$线性线关$\Leftrightarrow \exists \alpha_i$可以由向量组中其它向量线性表示。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;定理2&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;设$\alpha_1,\alpha_2,\ldots,\alpha_s$线性无关，$\alpha_1,\alpha_2,\ldots,\alpha_s,\beta$线性相关，那么$\beta$可由$\alpha_1,\alpha_2,\ldots,\alpha_s$线性表示，且表示方式唯一。&lt;/p&gt;</description>
       
     </item>
     

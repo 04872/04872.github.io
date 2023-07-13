@@ -1,2 +1,2 @@
 User-agent: *
-Sitemap: http%EF%BC%9A04872.github.io/sitemap.xml
+Sitemap: http:04872.github.io

@@ -75,7 +75,7 @@
 <meta itemprop="name" content="线性方程组的求解">
 <meta itemprop="description" content=""><meta itemprop="datePublished" content="2023-07-12T21:23:37+08:00" />
 <meta itemprop="dateModified" content="2023-07-12T21:23:37+08:00" />
-<meta itemprop="wordCount" content="730">
+<meta itemprop="wordCount" content="1664">
 <meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="线性方程组的求解"/>
 <meta name="twitter:description" content=""/>
@@ -332,7 +332,7 @@
         <div class="post-content">
           <h1 id="矩阵及其初等行变换">矩阵及其初等行变换</h1>
 <p>矩阵的初等行变换中，对换变换可以通过倍乘变换和倍加变换来实现。</p>
-<p>其实任意一个矩阵$A=(a_{ij})_{n\times m}$都可以经过行的倍加变换化为行阶梯形矩阵。证明这个结论的关键在于：证明可以通过倍加行变换将化为，然后我们对矩阵的行数和列数作归纳。</p>
+<p>其实任意一个矩阵$A=(a_{ij})<em>{n\times m}$都可以经过行的倍加变换化为行阶梯形矩阵。证明这个结论的关键在于：证明可以通过倍加行变换 $r_j+kr_i$ 将 $a</em>{i1}(i\geq 1)$ 化为 $0$，然后我们对矩阵的行数和列数作归纳。</p>
 <p><strong>矩阵等价</strong></p>
 <p>如果一个矩阵可以经过初等变换化为另一个矩阵，则称这两个矩阵之间等价。</p>
 <h1 id="n维向量">n维向量</h1>
@@ -361,6 +361,35 @@
 <p>向量组 $\alpha_1,\alpha_2,\ldots,\alpha_s(s\geq 2)$ 线性线关 $\Leftrightarrow \exists \alpha_i$ 可以由向量组中其它向量线性表示。</p>
 <p><strong>定理2</strong></p>
 <p>设 $\alpha_1,\alpha_2,\ldots,\alpha_s$ 线性无关，$\alpha_1,\alpha_2,\ldots,\alpha_s,\beta$ 线性相关，那么 $\beta$ 可由 $\alpha_1,\alpha_2,\ldots,\alpha_s$ 线性表示，且表示方式唯一。</p>
+<p><strong>定理3</strong></p>
+<p>设向量组 $\alpha_1,\alpha_2,\ldots,\alpha_r$ 和 $\beta_1,\ldots,\beta_t$，如果 $\alpha_1,\alpha_2,\ldots,\alpha_r$ 能由 $\beta_1,\ldots,\beta_t$线性表示，而且 $r&gt;s$，那么向量组 $\alpha_1,\alpha_2,\ldots,\alpha_r$线性相关。</p>
+<p>**证明：**令 $A=(\alpha_1,\ldots,\alpha_r), B=(\beta_1,\ldots,\beta_t)$，则存在矩阵 $C$ 使得 $A=BC$，其中 $C\in F^{t\times s}$，那么齐次线性方程组 $CX=\theta$ 有非零解，设为 $\xi$.  那么 $A\xi = BC\xi =B\theta = 0$，所以 $\alpha_1,\ldots,\alpha_r$线性相关。</p>
+<p><strong>推论</strong></p>
+<ol>
+<li>设向量组 $\alpha_1,\alpha_2,\ldots,\alpha_r$ 和 $\beta_1,\ldots,\beta_t$，如果 $\alpha_1,\alpha_2,\ldots,\alpha_r$ 能由 $\beta_1,\ldots,\beta_t$线性表示，而且 $\alpha_1,\alpha_2,\ldots,\alpha_r$线性无关，那么 $r\leq s$.</li>
+<li>两组线性无关的向量组的个数相同。</li>
+<li>$n=1$ 个 $n$ 维向量线性相关。</li>
+</ol>
+<h2 id="向量组的极大无关组">向量组的极大无关组</h2>
+<p><strong>极大无关组</strong></p>
+<p>设向量组 $\alpha_1,\alpha_2,\ldots,\alpha_s$ 的部分组 $\alpha_{i_1},\alpha_{i_2},\ldots,\alpha_{i_r}$，满足</p>
+<ul>
+<li>$\alpha_{i_1},\alpha_{i_2},\ldots,\alpha_{i_r}$ 线性无关</li>
+<li>$\alpha_1,\alpha_2,\ldots,\alpha_s$ 中任一向量都能由 $\alpha_{i_1},\alpha_{i_2},\ldots,\alpha_{i_r}$ 线性表示</li>
+</ul>
+<p>那么这个部分组称为原向量组的一个极大无关组。</p>
+<p><strong>向量组的秩</strong></p>
+<p>根据向量组等价一节中的推论2，$\alpha_1,\alpha_2,\ldots,\alpha_s$ 的极大无关组中，向量的个数是不变的，把这个数称为原向量组的秩，记为</p>
+<p>$$r(\alpha_1,\alpha_2,\ldots,\alpha_s).$$</p>
+<p><strong>定理1</strong></p>
+<p>$\beta_1,\ldots,\beta_t$ 可由 $\alpha_1,\ldots,\alpha_s$ 线性表示，那么 $r(\beta_1,\ldots,\beta_t) \leq r(\alpha_1,\ldots,\alpha_s)$.</p>
+<p>**证明：**直接利用上一节推论1.</p>
+<p><strong>推论2</strong></p>
+<p>等价的向量组具有相同的秩。</p>
+<h2 id="向量组的秩和矩阵的秩">向量组的秩和矩阵的秩</h2>
+<p>首先我们容易理解：矩阵的初等行变换不会改变矩阵的行秩，我们可以证明矩阵的初等行变换也不会改变矩阵的列秩。</p>
+<p>**证明：**设矩阵 $A$ 可以经过初等行变换化为 $B$，那么存在矩阵 $Q$ 和 $P$， 使得 $A=QB$ ，$B=PA$.  那么 $AX=\theta$ 和 $BX=\theta$ 同解。所以说 $A$ 的列向量组线性相关 $\Leftrightarrow$ $B$ 的列向量组线性相关。也就是说，矩阵的初等行变换，不改变矩阵列向量组的线性相关性。这个初等行变换作用于矩阵 $A$ 列向量组的极大无关组上，得到 $B$ 相应位置的列向量组，考虑相应线性方程组，我们可以证明这个列向量组是 $B$ 的极大无关组。</p>
+<p>利用上述定理，我们可以得到结论：<strong>行阶梯形矩阵的行秩=矩阵的秩=列秩，任意矩阵的行秩=秩=列秩</strong>。</p>
         </div>
 
         

@@ -20,7 +20,7 @@
       
         <description>&lt;h1 id=&#34;矩阵及其初等行变换&#34;&gt;矩阵及其初等行变换&lt;/h1&gt;
 &lt;p&gt;矩阵的初等行变换中，对换变换可以通过倍乘变换和倍加变换来实现。&lt;/p&gt;
-&lt;p&gt;其实任意一个矩阵$A=(a_{ij})_{n\times m}$都可以经过行的倍加变换化为行阶梯形矩阵。证明这个结论的关键在于：证明可以通过倍加行变换将化为，然后我们对矩阵的行数和列数作归纳。&lt;/p&gt;
+&lt;p&gt;其实任意一个矩阵$A=(a_{ij})&lt;em&gt;{n\times m}$都可以经过行的倍加变换化为行阶梯形矩阵。证明这个结论的关键在于：证明可以通过倍加行变换 $r_j+kr_i$ 将 $a&lt;/em&gt;{i1}(i\geq 1)$ 化为 $0$，然后我们对矩阵的行数和列数作归纳。&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;矩阵等价&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;如果一个矩阵可以经过初等变换化为另一个矩阵，则称这两个矩阵之间等价。&lt;/p&gt;
 &lt;h1 id=&#34;n维向量&#34;&gt;n维向量&lt;/h1&gt;
@@ -48,7 +48,36 @@
 &lt;p&gt;&lt;strong&gt;定理1&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;向量组 $\alpha_1,\alpha_2,\ldots,\alpha_s(s\geq 2)$ 线性线关 $\Leftrightarrow \exists \alpha_i$ 可以由向量组中其它向量线性表示。&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;定理2&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;设 $\alpha_1,\alpha_2,\ldots,\alpha_s$ 线性无关，$\alpha_1,\alpha_2,\ldots,\alpha_s,\beta$ 线性相关，那么 $\beta$ 可由 $\alpha_1,\alpha_2,\ldots,\alpha_s$ 线性表示，且表示方式唯一。&lt;/p&gt;</description>
+&lt;p&gt;设 $\alpha_1,\alpha_2,\ldots,\alpha_s$ 线性无关，$\alpha_1,\alpha_2,\ldots,\alpha_s,\beta$ 线性相关，那么 $\beta$ 可由 $\alpha_1,\alpha_2,\ldots,\alpha_s$ 线性表示，且表示方式唯一。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;定理3&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;设向量组 $\alpha_1,\alpha_2,\ldots,\alpha_r$ 和 $\beta_1,\ldots,\beta_t$，如果 $\alpha_1,\alpha_2,\ldots,\alpha_r$ 能由 $\beta_1,\ldots,\beta_t$线性表示，而且 $r&amp;gt;s$，那么向量组 $\alpha_1,\alpha_2,\ldots,\alpha_r$线性相关。&lt;/p&gt;
+&lt;p&gt;**证明：**令 $A=(\alpha_1,\ldots,\alpha_r), B=(\beta_1,\ldots,\beta_t)$，则存在矩阵 $C$ 使得 $A=BC$，其中 $C\in F^{t\times s}$，那么齐次线性方程组 $CX=\theta$ 有非零解，设为 $\xi$.  那么 $A\xi = BC\xi =B\theta = 0$，所以 $\alpha_1,\ldots,\alpha_r$线性相关。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;推论&lt;/strong&gt;&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;设向量组 $\alpha_1,\alpha_2,\ldots,\alpha_r$ 和 $\beta_1,\ldots,\beta_t$，如果 $\alpha_1,\alpha_2,\ldots,\alpha_r$ 能由 $\beta_1,\ldots,\beta_t$线性表示，而且 $\alpha_1,\alpha_2,\ldots,\alpha_r$线性无关，那么 $r\leq s$.&lt;/li&gt;
+&lt;li&gt;两组线性无关的向量组的个数相同。&lt;/li&gt;
+&lt;li&gt;$n=1$ 个 $n$ 维向量线性相关。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;向量组的极大无关组&#34;&gt;向量组的极大无关组&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;极大无关组&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;设向量组 $\alpha_1,\alpha_2,\ldots,\alpha_s$ 的部分组 $\alpha_{i_1},\alpha_{i_2},\ldots,\alpha_{i_r}$，满足&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;$\alpha_{i_1},\alpha_{i_2},\ldots,\alpha_{i_r}$ 线性无关&lt;/li&gt;
+&lt;li&gt;$\alpha_1,\alpha_2,\ldots,\alpha_s$ 中任一向量都能由 $\alpha_{i_1},\alpha_{i_2},\ldots,\alpha_{i_r}$ 线性表示&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;那么这个部分组称为原向量组的一个极大无关组。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;向量组的秩&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;根据向量组等价一节中的推论2，$\alpha_1,\alpha_2,\ldots,\alpha_s$ 的极大无关组中，向量的个数是不变的，把这个数称为原向量组的秩，记为&lt;/p&gt;
+&lt;p&gt;$$r(\alpha_1,\alpha_2,\ldots,\alpha_s).$$&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;定理1&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;$\beta_1,\ldots,\beta_t$ 可由 $\alpha_1,\ldots,\alpha_s$ 线性表示，那么 $r(\beta_1,\ldots,\beta_t) \leq r(\alpha_1,\ldots,\alpha_s)$.&lt;/p&gt;
+&lt;p&gt;**证明：**直接利用上一节推论1.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;推论2&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;等价的向量组具有相同的秩。&lt;/p&gt;
+&lt;h2 id=&#34;向量组的秩和矩阵的秩&#34;&gt;向量组的秩和矩阵的秩&lt;/h2&gt;
+&lt;p&gt;首先我们容易理解：矩阵的初等行变换不会改变矩阵的行秩，我们可以证明矩阵的初等行变换也不会改变矩阵的列秩。&lt;/p&gt;
+&lt;p&gt;**证明：**设矩阵 $A$ 可以经过初等行变换化为 $B$，那么存在矩阵 $Q$ 和 $P$， 使得 $A=QB$ ，$B=PA$.  那么 $AX=\theta$ 和 $BX=\theta$ 同解。所以说 $A$ 的列向量组线性相关 $\Leftrightarrow$ $B$ 的列向量组线性相关。也就是说，矩阵的初等行变换，不改变矩阵列向量组的线性相关性。这个初等行变换作用于矩阵 $A$ 列向量组的极大无关组上，得到 $B$ 相应位置的列向量组，考虑相应线性方程组，我们可以证明这个列向量组是 $B$ 的极大无关组。&lt;/p&gt;
+&lt;p&gt;利用上述定理，我们可以得到结论：&lt;strong&gt;行阶梯形矩阵的行秩=矩阵的秩=列秩，任意矩阵的行秩=秩=列秩&lt;/strong&gt;。&lt;/p&gt;</description>
       
     </item>
     

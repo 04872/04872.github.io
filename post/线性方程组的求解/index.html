@@ -75,7 +75,7 @@
 <meta itemprop="name" content="线性方程组的求解">
 <meta itemprop="description" content=""><meta itemprop="datePublished" content="2023-07-12T21:23:37+08:00" />
 <meta itemprop="dateModified" content="2023-07-12T21:23:37+08:00" />
-<meta itemprop="wordCount" content="1674">
+<meta itemprop="wordCount" content="1662">
 <meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="线性方程组的求解"/>
 <meta name="twitter:description" content=""/>
@@ -362,7 +362,7 @@
 <p>设 $\alpha_1,\alpha_2,\ldots,\alpha_s$ 线性无关，$\alpha_1,\alpha_2,\ldots,\alpha_s,\beta$ 线性相关，那么 $\beta$ 可由 $\alpha_1,\alpha_2,\ldots,\alpha_s$ 线性表示，且表示方式唯一。</p>
 <p><strong>定理3</strong></p>
 <p>设向量组 $\alpha_1,\alpha_2,\ldots,\alpha_r$ 和 $\beta_1,\ldots,\beta_t$，如果 $\alpha_1,\alpha_2,\ldots,\alpha_r$ 能由 $\beta_1,\ldots,\beta_t$线性表示，而且 $r&gt;s$，那么向量组 $\alpha_1,\alpha_2,\ldots,\alpha_r$线性相关。</p>
-<p>**证明：**令 $A=(\alpha_1,\ldots,\alpha_r), B=(\beta_1,\ldots,\beta_t)$，则存在矩阵 $C$ 使得 $A=BC$，其中 $C\in F^{t\times s}$，那么齐次线性方程组 $CX=\theta$ 有非零解，设为 $\xi$.  那么 $A\xi = BC\xi =B\theta = 0$，所以 $\alpha_1,\ldots,\alpha_r$线性相关。</p>
+<p><strong>证明</strong>：令 $A=(\alpha_1,\ldots,\alpha_r), B=(\beta_1,\ldots,\beta_t)$，则存在矩阵 $C$ 使得 $A=BC$，其中 $C\in F^{t\times s}$，那么齐次线性方程组 $CX=\theta$ 有非零解，设为 $\xi$.  那么 $A\xi = BC\xi =B\theta = 0$，所以 $\alpha_1,\ldots,\alpha_r$线性相关。</p>
 <p><strong>推论</strong></p>
 <ol>
 <li>设向量组 $\alpha_1,\alpha_2,\ldots,\alpha_r$ 和 $\beta_1,\ldots,\beta_t$，如果 $\alpha_1,\alpha_2,\ldots,\alpha_r$ 能由 $\beta_1,\ldots,\beta_t$线性表示，而且 $\alpha_1,\alpha_2,\ldots,\alpha_r$线性无关，那么 $r\leq s$.</li>
@@ -382,12 +382,12 @@
 <p>$$r(\alpha_1,\alpha_2,\ldots,\alpha_s).$$</p>
 <p><strong>定理1</strong></p>
 <p>$\beta_1,\ldots,\beta_t$ 可由 $\alpha_1,\ldots,\alpha_s$ 线性表示，那么 $r(\beta_1,\ldots,\beta_t) \leq r(\alpha_1,\ldots,\alpha_s)$.</p>
-<p>**证明：**直接利用上一节推论1.</p>
+<p><strong>证明</strong>：直接利用上一节推论1.</p>
 <p><strong>推论2</strong></p>
 <p>等价的向量组具有相同的秩。</p>
 <h2 id="向量组的秩和矩阵的秩">向量组的秩和矩阵的秩</h2>
 <p>首先我们容易理解：矩阵的初等行变换不会改变矩阵的行秩，我们可以证明矩阵的初等行变换也不会改变矩阵的列秩。</p>
-<p>**证明：**设矩阵 $A$ 可以经过初等行变换化为 $B$，那么存在矩阵 $Q$ 和 $P$， 使得 $A=QB$ ，$B=PA$.  那么 $AX=\theta$ 和 $BX=\theta$ 同解。所以说 $A$ 的列向量组线性相关 $\Leftrightarrow$ $B$ 的列向量组线性相关。也就是说，矩阵的初等行变换，不改变矩阵列向量组的线性相关性。这个初等行变换作用于矩阵 $A$ 列向量组的极大无关组上，得到 $B$ 相应位置的列向量组，考虑相应线性方程组，我们可以证明这个列向量组是 $B$ 的极大无关组。</p>
+<p><strong>证明</strong>：设矩阵 $A$ 可以经过初等行变换化为 $B$，那么存在矩阵 $Q$ 和 $P$， 使得 $A=QB$ ，$B=PA$.  那么 $AX=\theta$ 和 $BX=\theta$ 同解。所以说 $A$ 的列向量组线性相关 $\Leftrightarrow$ $B$ 的列向量组线性相关。也就是说，矩阵的初等行变换，不改变矩阵列向量组的线性相关性。这个初等行变换作用于矩阵 $A$ 列向量组的极大无关组上，得到 $B$ 相应位置的列向量组，考虑相应线性方程组，我们可以证明这个列向量组是 $B$ 的极大无关组。</p>
 <p>利用上述定理，我们可以得到结论：<strong>行阶梯形矩阵的行秩=矩阵的秩=列秩，任意矩阵的行秩=秩=列秩</strong>。</p>
         </div>
 

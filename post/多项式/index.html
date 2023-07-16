@@ -75,7 +75,7 @@
 <meta itemprop="name" content="多项式">
 <meta itemprop="description" content=""><meta itemprop="datePublished" content="2023-05-22T21:24:01+08:00" />
 <meta itemprop="dateModified" content="2023-05-22T21:24:01+08:00" />
-<meta itemprop="wordCount" content="1081">
+<meta itemprop="wordCount" content="1966">
 <meta itemprop="keywords" content="多项式," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="多项式"/>
 <meta name="twitter:description" content=""/>
@@ -331,17 +331,17 @@
         
         <div class="post-content">
           <h1 id="多项式">多项式</h1>
-<h2 id="整除关系">整除关系</h2>
+<h2 id="一整除关系">一、整除关系</h2>
 <p><strong>带余除法</strong> <em>对于 $P[x]$ 上的任意两个多项式 $f(x)$ 和 $g(x)$，其中 $g(x)\neq 0$，则一定有 $P[x]$ 中的多项式 $q(x)$、$r(x)$ 存在，使得</em>
 <em>$$f(x) = q(x)g(x)+r(x).$$</em>
 <strong>证明</strong> : 过程就是带余除法的过程.</p>
-<p><strong>定义1</strong> <em>称数域 $P$ 上的多项式  $g(x)$ 整除 $f(x)$ ，如果有数域 $P$ 上的多项式 $h(x)$ 使得</em>
+<p><strong>定义1.1</strong> <em>称数域 $P$ 上的多项式  $g(x)$ 整除 $f(x)$ ，如果有数域 $P$ 上的多项式 $h(x)$ 使得</em>
 <em>$$f(x) = g(x)h(x).$$</em>
 <em>我们用 “$g(x)\mid f(x)$” 表示 $g(x)$ 整除 $f(x)$，用 “$g(x)\nmid f(x)$” 表示 $g(x)$ 不整除 $f(x)$.</em></p>
 <blockquote>
 <p><!-- raw HTML omitted --><strong>整除关系不随数域的改变而改变</strong><!-- raw HTML omitted --></p>
 </blockquote>
-<p><strong>定理1</strong> <em>对于数域 $P$ 上的任意两个多项式 $f(x)$，$g(x)$，其中 $g(x)\neq 0$, $g(x)\mid f(x)$ 的充要条件是 $g(x)$ 除 $f(x)$ 的余数是零.</em></p>
+<p><strong>定理 1.1</strong> <em>对于数域 $P$ 上的任意两个多项式 $f(x)$，$g(x)$，其中 $g(x)\neq 0$, $g(x)\mid f(x)$ 的充要条件是 $g(x)$ 除 $f(x)$ 的余数是零.</em></p>
 <p><strong>证明</strong> 充分性：如果 $r(x)=0$，那么 $f(x) = q(x)g(x)$，所以整除.
 必要性：根据整除定义，$f(x) = q(x)g(x)=q(x)g(x)+0$.</p>
 <p><strong>整除性质1</strong> <em>如果 $f(x)$ 和 $g(x)$ 相互整除，那么存在非零常数 $c$，使得 $f(x)=cg(x)$.</em></p>
@@ -357,7 +357,7 @@
 <p><em>其中 $u_i(x)\in P[x]$.</em></p>
 <p><strong>证明</strong> 对任意 正整数$1\leq i\leq r$，存在 $h_i(x)\in P[x]$，使得 $g_i(x) = f(x)h_i(x)$.</p>
 <p>所以 $\sum_{i=1}^{r}u_i(x)g_i(x) = \sum_{i=1}^{r}u_i(x)h_i(x)f(x) = f(x)\sum_{i=1}^{r}u_i(x)h_i(x)$.</p>
-<h2 id="最大公因式">最大公因式</h2>
+<h2 id="二最大公因式">二、最大公因式</h2>
 <p><strong>最大公因式定义</strong>：</p>
 <p>设 $f(x),g(x),u(x)\in f[x]$，如果 $u(x)$ 满足以下条件，那么称其为 $f(x)$ 与 $g(x)$ 的最大公因式，</p>
 <ul>
@@ -369,11 +369,11 @@
 </li>
 </ul>
 <p>如何求两多项式之间的最大公因式呢？我们可以根据以下定理来求解</p>
-<p><strong>定理1</strong></p>
+<p><strong>定理 2.1</strong></p>
 <p>如果 $f(x)=q(x)g(x)+r(x)$，那么 $f(x)$ 与 $g(x)$ 的最大公因式和 $g(x)$ 与 $r(x)$ 的相同.</p>
 <p><strong>证明</strong>：设 $d(x)$ 是 $f(x)$ 和 $g(x)$ 的最大公因式，那么 $d(x)\mid r(x)$，所以 $d(x)$ 是 $g(x)$ 和 $r(x)$ 之间的公因式.</p>
 <p>设有 $d_1(x)\mid r(x),d_1(x)\mid g(x)$，那么 $d_1(x)\mid f(x)$，所以 $d_1(x)$ 是 $f(x)$ 与 $g(x)$ 的因式，所以 $d_1(x)\mid d(x)$.</p>
-<p><strong>定理2</strong></p>
+<p><strong>定理 2.2</strong></p>
 <p>如果 $f(x),g(x)\in F[x]$，$d(x)$ 是二者的最大公因式，那么存在 $u(x),v(x)\in F[x]$，使得</p>
 <p>$$f(x)u(x)+g(x)v(x)=d(x).$$</p>
 <p><strong>证明</strong>：证明过程就是利用定理1求解最大公因式的过程.</p>
@@ -381,14 +381,55 @@
 <p><strong>互素</strong></p>
 <p>$f(x),g(x)\in F[x]$ 互素 $\triangleq (f(x),g(x))=1$.</p>
 <p>互素的多项式之间有一些特殊的性质。</p>
-<p><strong>定理3</strong></p>
+<p><strong>定理 2.3</strong></p>
 <p>$\left(f(x),g(x)\right)=1 \Leftrightarrow \exists u(x), v(x)$，使得 $u(x)f(x)+v(x)g(x)=1$.</p>
-<p><strong>证明</strong>：首先证明必要性。根据 <strong>定理2</strong>，显然成立。再证明充分性，设 $d(x)=(f(x),g(x))$，则 $d(x)\mid 1$，而且显然 $1$ 是公因式，那么 $(f(x),g(x))=1$.</p>
-<p><strong>定理4</strong></p>
+<p><strong>证明</strong>：首先证明必要性。根据 <strong>定理 2.2</strong>，显然成立。再证明充分性，设 $d(x)=(f(x),g(x))$，则 $d(x)\mid 1$，而且显然 $1$ 是公因式，那么 $(f(x),g(x))=1$.</p>
+<p><strong>定理 2.4</strong></p>
 <p>如果 $(f(x),g(x))=1$ 且 $f(x)\mid g(x)h(x)$，那么 $f(x)\mid h(x)$.</p>
 <p><strong>证明</strong>：$(f(x),g(x))=1$，那么 $\exists u(x),v(x)$，使得 $u(x)f(x)+v(x)g(x)=1$.</p>
 <p>那么，$u(x)f(x)h(x)+v(x)g(x)h(x)=h(x)$.</p>
 <p>所以 $f(x)\mid h(x).$</p>
+<p><strong>定理 2.5</strong></p>
+<p>如果 $f_1(x)\mid g(x),f_2(x)\mid g(x), (f(x),g(x))=1$，那么 $f_1(x)f_2(x)\mid g(x)$.</p>
+<p><strong>证明</strong>：根据条件，得到 $g(x)=f_1(x)h_1(x)=f_2(x)h_2(x)$，$u(x)f_1(x)+v(x)f_2(x)=1$.</p>
+<p>那么，$u(x)f_1(x)f_2(x)h_2(x)+v(x)f_2(x)f_1(x)h_1(x)=g(x)$，所以 $f_1(x)f_2(x)\mid g(x)$.</p>
+<h2 id="三因式分解定理">三、因式分解定理</h2>
+<p><strong>不可约多项式</strong></p>
+<p>$f(x)\in F[x],\partial(f(x))\geq 1$，如果 $f(x)$ 不能表示为两个次数更低的多项式的乘积，那么称 $f(x)$ 不可约.</p>
+<blockquote>
+<p>一个多项式是否可约依赖于数域。</p>
+</blockquote>
+<p>任意多项式与不可约多项式之间要么整除，要么互素。也就是以下定理。</p>
+<p><strong>定理 3.1</strong></p>
+<p>如果 $p(x)$ 是不可约多项式，那么对于任意多项式 $f(x)$，要么 $p(x)\mid f(x)$，要么 $(f(x),p(x))=1$.</p>
+<p><strong>证明</strong>：我们证明如果 $p(x)\nmid f(x)$，那么 $(f(x),p(x))$ 互素。</p>
+<p>因为 $p(x)$ 是不可约多项式，所以 $f(x)$ 和 $p(x)$ 的公因式只能是常数或者 $cp(x)$，而 $p(x)\nmid f(x)$，所以 $cp(x)$ 不可能是 $f(x)$ 的因式，所以 $(f(x),p(x))=1$.</p>
+<p><strong>定理 3.2</strong></p>
+<p>如果 $p(x)$ 是不可约多项式， 若 $p(x)\mid f(x)g(x)$，则 $p(x)$ 至少整除它们其中的一个。</p>
+<p><strong>证明</strong>：假设 $p(x)\nmid f(x)$，我们证明 $p(x)\mid g(x)$.  根据 <strong>定理 3.1</strong>，$(p(x),f(x))=1$，根据 <strong>定理 2.4</strong>，$p(x)\mid g(x)$.</p>
+<p><strong>因式分解唯一性定理</strong></p>
+<p>对于任意 $f(x)\in F(x)$，不考虑顺序和常数倍的意义下，可以将其唯一分解为不可约多项式的乘积。</p>
+<p><strong>证明</strong>：对 $f(x)$ 的次数作数学归纳。</p>
+<h2 id="四重因式">四、重因式</h2>
+<p><strong>重因式定义</strong></p>
+<p>如果不可约多项式 $p^k(x)\mid f(x), p^{k+1}(x)\nmid f(x)$，那么我们称 $p(x)$ 是 $f(x)$ 的 $k$ 重因式。</p>
+<p>我们可以利用以下定理给出一个多项式的重因式的性质</p>
+<p><strong>定理 4.1</strong>
+如果 $p(x), f(x)\in F[x]$，$p(x)$ 不可约，若 $p(x)$ 是 $f(x)$ 的 $k$ 重因式，那么 $p(x)$ 是 $f&rsquo;(x)$ 的 $k-1$ 重因式。</p>
+<p><strong>证明</strong>：直接验证即可。</p>
+<p><strong>推论 4.2</strong></p>
+<p>如果不可约多项式 $p(x)$ 是 $f(x)$ 的 $k$ 重因式，那么 $p(x)$ 是 $f&rsquo;(x),f&rsquo;&rsquo;(x),\ldots,f^{(k-1)}(x)$ 的因式，但不是 $f^{(k)}(x)$ 的因式。</p>
+<p><strong>证明</strong>：直接验证易得。</p>
+<p><strong>推论 4.3</strong></p>
+<p>$p(x)$ 是 $f(x)$ 的重因式（重数大于1的我们叫其重因式）的充要条件为 $p(x)$ 是 $f(x)$ 和 $f&rsquo;(x)$ 的公因式。</p>
+<p><strong>证明</strong>：十分直观，简单验证即可。</p>
+<p><strong>推论 4.4</strong></p>
+<p>$f(x)$ 没有重因式（重数大于1的我们叫其重因式）的充要条件为 $f(x)$ 和 $f&rsquo;(x)$ 互素。</p>
+<h2 id="五多项式函数">五、多项式函数</h2>
+<p><strong>定理 5.1(余数定理)</strong>  $x-\alpha$ 除 多项式 $f(x)$ 所得的余式是一个常数，这个常数等于 $f(\alpha)$.</p>
+<p><strong>证明</strong>： 根据带余除法 $f(x) = (x-\alpha)p(x) + c$，那么 $f(\alpha)=c$.</p>
+<p><strong>推论 5.2</strong></p>
+<p>$\alpha$ 是 $f(x)$ 的根的充要条件是 $(x-\alpha) \mid f(x)$.</p>
         </div>
 
         

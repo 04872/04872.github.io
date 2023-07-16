@@ -414,7 +414,9 @@
 &lt;p&gt;&lt;strong&gt;证明&lt;/strong&gt;：首先证明必要性。根据 &lt;strong&gt;定理2&lt;/strong&gt;，显然成立。再证明充分性，设 $d(x)=(f(x),g(x))$，则 $d(x)\mid 1$，而且显然 $1$ 是公因式，那么 $(f(x),g(x))=1$.&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;定理4&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;如果 $(f(x),g(x))=1$ 且 $f(x)\mid g(x)h(x)$，那么 $f(x)\mid h(x)$.&lt;/p&gt;
-&lt;p&gt;$$\begin{aligned}(f(x),g(x))=1  &amp;amp;\Rightarrow  \exists u(x),v(x), u(x)f(x)+v(x)g(x)=1\ &amp;amp;\Rightarrow u(x)f(x)h(x)+v(x)g(x)h(x)=h(x)\ &amp;amp;\Rightarrow f(x)\mid h(x)\end{aligned}.$$&lt;/p&gt;</description>
+&lt;p&gt;&lt;strong&gt;证明&lt;/strong&gt;：$(f(x),g(x))=1$，那么 $\exists u(x),v(x)$，使得 $u(x)f(x)+v(x)g(x)=1$.&lt;/p&gt;
+&lt;p&gt;那么，$u(x)f(x)h(x)+v(x)g(x)h(x)=h(x)$.&lt;/p&gt;
+&lt;p&gt;所以 $f(x)\mid h(x).$&lt;/p&gt;</description>
       
     </item>
     

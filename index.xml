@@ -358,7 +358,8 @@
       
       <guid>http:04872.github.io/post/%E5%A4%9A%E9%A1%B9%E5%BC%8F/</guid>
       
-        <description>&lt;h1 id=&#34;整除&#34;&gt;整除&lt;/h1&gt;
+        <description>&lt;h1 id=&#34;多项式&#34;&gt;多项式&lt;/h1&gt;
+&lt;h2 id=&#34;整除关系&#34;&gt;整除关系&lt;/h2&gt;
 &lt;p&gt;&lt;strong&gt;带余除法&lt;/strong&gt; &lt;em&gt;对于 $P[x]$ 上的任意两个多项式 $f(x)$ 和 $g(x)$，其中 $g(x)\neq 0$，则一定有 $P[x]$ 中的多项式 $q(x)$、$r(x)$ 存在，使得&lt;/em&gt;
 &lt;em&gt;$$f(x) = q(x)g(x)+r(x).$$&lt;/em&gt;
 &lt;strong&gt;证明&lt;/strong&gt; : 过程就是带余除法的过程.&lt;/p&gt;
@@ -383,7 +384,37 @@
 &lt;p&gt;&lt;em&gt;$$f(x)\mid \sum_{i=1}^{r}u_i(x)g_i(x).$$&lt;/em&gt;&lt;/p&gt;
 &lt;p&gt;&lt;em&gt;其中 $u_i(x)\in P[x]$.&lt;/em&gt;&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;证明&lt;/strong&gt; 对任意 正整数$1\leq i\leq r$，存在 $h_i(x)\in P[x]$，使得 $g_i(x) = f(x)h_i(x)$.&lt;/p&gt;
-&lt;p&gt;所以 $\sum_{i=1}^{r}u_i(x)g_i(x) = \sum_{i=1}^{r}u_i(x)h_i(x)f(x) = f(x)\sum_{i=1}^{r}u_i(x)h_i(x)$.&lt;/p&gt;</description>
+&lt;p&gt;所以 $\sum_{i=1}^{r}u_i(x)g_i(x) = \sum_{i=1}^{r}u_i(x)h_i(x)f(x) = f(x)\sum_{i=1}^{r}u_i(x)h_i(x)$.&lt;/p&gt;
+&lt;h2 id=&#34;最大公因式&#34;&gt;最大公因式&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;最大公因式定义&lt;/strong&gt;：&lt;/p&gt;
+&lt;p&gt;设 $f(x),g(x),u(x)\in f[x]$，如果 $u(x)$ 满足以下条件，那么称其为 $f(x)$ 与 $g(x)$ 的最大公因式，&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;$u(x)\mid f(x), u(x)\mid g(x)$.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;如果 $v(x)\mid f(x)$ 且 $v(x)\mid g(x)$，那么 $v(x)\mid u(x)$.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;如何求两多项式之间的最大公因式呢？我们可以根据以下定理来求解&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;定理1&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;如果 $f(x)=q(x)g(x)+r(x)$，那么 $f(x)$ 与 $g(x)$ 的最大公因式和 $g(x)$ 与 $r(x)$ 的相同.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;证明&lt;/strong&gt;：设 $d(x)$ 是 $f(x)$ 和 $g(x)$ 的最大公因式，那么 $d(x)\mid r(x)$，所以 $d(x)$ 是 $g(x)$ 和 $r(x)$ 之间的公因式.&lt;/p&gt;
+&lt;p&gt;设有 $d_1(x)\mid r(x),d_1(x)\mid g(x)$，那么 $d_1(x)\mid f(x)$，所以 $d_1(x)$ 是 $f(x)$ 与 $g(x)$ 的因式，所以 $d_1(x)\mid d(x)$.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;定理2&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;如果 $f(x),g(x)\in F[x]$，$d(x)$ 是二者的最大公因式，那么存在 $u(x),v(x)\in F[x]$，使得&lt;/p&gt;
+&lt;p&gt;$$f(x)u(x)+g(x)v(x)=d(x).$$&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;证明&lt;/strong&gt;：证明过程就是利用定理1求解最大公因式的过程.&lt;/p&gt;
+&lt;p&gt;为了描述方便，我们一般记 $(f(x),g(x))$ 为 首项系数为 $1$ 的最大公因式.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;互素&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;$f(x),g(x)\in F[x]$ 互素 $\triangleq (f(x),g(x))=1$.&lt;/p&gt;
+&lt;p&gt;互素的多项式之间有一些特殊的性质。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;定理3&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;$\left(f(x),g(x)\right)=1 \Leftrightarrow \exists u(x), v(x)$，使得 $u(x)f(x)+v(x)g(x)=1$.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;证明&lt;/strong&gt;：首先证明必要性。根据 &lt;strong&gt;定理2&lt;/strong&gt;，显然成立。再证明充分性，设 $d(x)=(f(x),g(x))$，则 $d(x)\mid 1$，而且显然 $1$ 是公因式，那么 $(f(x),g(x))=1$.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;定理4&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;如果 $(f(x),g(x))=1$ 且 $f(x)\mid g(x)h(x)$，那么 $f(x)\mid h(x)$.&lt;/p&gt;
+&lt;p&gt;$$\begin{aligned}(f(x),g(x))=1  &amp;amp;\Rightarrow  \exists u(x),v(x), u(x)f(x)+v(x)g(x)=1\ &amp;amp;\Rightarrow u(x)f(x)h(x)+v(x)g(x)h(x)=h(x)\ &amp;amp;\Rightarrow f(x)\mid h(x)\end{aligned}.$$&lt;/p&gt;</description>
       
     </item>
     

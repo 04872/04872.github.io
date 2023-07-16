@@ -75,7 +75,7 @@
 <meta itemprop="name" content="多项式">
 <meta itemprop="description" content=""><meta itemprop="datePublished" content="2023-05-22T21:24:01+08:00" />
 <meta itemprop="dateModified" content="2023-05-22T21:24:01+08:00" />
-<meta itemprop="wordCount" content="562">
+<meta itemprop="wordCount" content="1015">
 <meta itemprop="keywords" content="多项式," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="多项式"/>
 <meta name="twitter:description" content=""/>
@@ -330,7 +330,8 @@
 
         
         <div class="post-content">
-          <h1 id="整除">整除</h1>
+          <h1 id="多项式">多项式</h1>
+<h2 id="整除关系">整除关系</h2>
 <p><strong>带余除法</strong> <em>对于 $P[x]$ 上的任意两个多项式 $f(x)$ 和 $g(x)$，其中 $g(x)\neq 0$，则一定有 $P[x]$ 中的多项式 $q(x)$、$r(x)$ 存在，使得</em>
 <em>$$f(x) = q(x)g(x)+r(x).$$</em>
 <strong>证明</strong> : 过程就是带余除法的过程.</p>
@@ -356,6 +357,36 @@
 <p><em>其中 $u_i(x)\in P[x]$.</em></p>
 <p><strong>证明</strong> 对任意 正整数$1\leq i\leq r$，存在 $h_i(x)\in P[x]$，使得 $g_i(x) = f(x)h_i(x)$.</p>
 <p>所以 $\sum_{i=1}^{r}u_i(x)g_i(x) = \sum_{i=1}^{r}u_i(x)h_i(x)f(x) = f(x)\sum_{i=1}^{r}u_i(x)h_i(x)$.</p>
+<h2 id="最大公因式">最大公因式</h2>
+<p><strong>最大公因式定义</strong>：</p>
+<p>设 $f(x),g(x),u(x)\in f[x]$，如果 $u(x)$ 满足以下条件，那么称其为 $f(x)$ 与 $g(x)$ 的最大公因式，</p>
+<ul>
+<li>
+<p>$u(x)\mid f(x), u(x)\mid g(x)$.</p>
+</li>
+<li>
+<p>如果 $v(x)\mid f(x)$ 且 $v(x)\mid g(x)$，那么 $v(x)\mid u(x)$.</p>
+</li>
+</ul>
+<p>如何求两多项式之间的最大公因式呢？我们可以根据以下定理来求解</p>
+<p><strong>定理1</strong></p>
+<p>如果 $f(x)=q(x)g(x)+r(x)$，那么 $f(x)$ 与 $g(x)$ 的最大公因式和 $g(x)$ 与 $r(x)$ 的相同.</p>
+<p><strong>证明</strong>：设 $d(x)$ 是 $f(x)$ 和 $g(x)$ 的最大公因式，那么 $d(x)\mid r(x)$，所以 $d(x)$ 是 $g(x)$ 和 $r(x)$ 之间的公因式.</p>
+<p>设有 $d_1(x)\mid r(x),d_1(x)\mid g(x)$，那么 $d_1(x)\mid f(x)$，所以 $d_1(x)$ 是 $f(x)$ 与 $g(x)$ 的因式，所以 $d_1(x)\mid d(x)$.</p>
+<p><strong>定理2</strong></p>
+<p>如果 $f(x),g(x)\in F[x]$，$d(x)$ 是二者的最大公因式，那么存在 $u(x),v(x)\in F[x]$，使得</p>
+<p>$$f(x)u(x)+g(x)v(x)=d(x).$$</p>
+<p><strong>证明</strong>：证明过程就是利用定理1求解最大公因式的过程.</p>
+<p>为了描述方便，我们一般记 $(f(x),g(x))$ 为 首项系数为 $1$ 的最大公因式.</p>
+<p><strong>互素</strong></p>
+<p>$f(x),g(x)\in F[x]$ 互素 $\triangleq (f(x),g(x))=1$.</p>
+<p>互素的多项式之间有一些特殊的性质。</p>
+<p><strong>定理3</strong></p>
+<p>$\left(f(x),g(x)\right)=1 \Leftrightarrow \exists u(x), v(x)$，使得 $u(x)f(x)+v(x)g(x)=1$.</p>
+<p><strong>证明</strong>：首先证明必要性。根据 <strong>定理2</strong>，显然成立。再证明充分性，设 $d(x)=(f(x),g(x))$，则 $d(x)\mid 1$，而且显然 $1$ 是公因式，那么 $(f(x),g(x))=1$.</p>
+<p><strong>定理4</strong></p>
+<p>如果 $(f(x),g(x))=1$ 且 $f(x)\mid g(x)h(x)$，那么 $f(x)\mid h(x)$.</p>
+<p>$$\begin{aligned}(f(x),g(x))=1  &amp;\Rightarrow  \exists u(x),v(x), u(x)f(x)+v(x)g(x)=1\ &amp;\Rightarrow u(x)f(x)h(x)+v(x)g(x)h(x)=h(x)\ &amp;\Rightarrow f(x)\mid h(x)\end{aligned}.$$</p>
         </div>
 
         

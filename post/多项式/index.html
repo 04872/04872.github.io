@@ -75,7 +75,7 @@
 <meta itemprop="name" content="多项式">
 <meta itemprop="description" content=""><meta itemprop="datePublished" content="2023-05-22T21:24:01+08:00" />
 <meta itemprop="dateModified" content="2023-05-22T21:24:01+08:00" />
-<meta itemprop="wordCount" content="1966">
+<meta itemprop="wordCount" content="2579">
 <meta itemprop="keywords" content="多项式," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="多项式"/>
 <meta name="twitter:description" content=""/>
@@ -430,6 +430,34 @@
 <p><strong>证明</strong>： 根据带余除法 $f(x) = (x-\alpha)p(x) + c$，那么 $f(\alpha)=c$.</p>
 <p><strong>推论 5.2</strong></p>
 <p>$\alpha$ 是 $f(x)$ 的根的充要条件是 $(x-\alpha) \mid f(x)$.</p>
+<p><strong>定理 5.3</strong></p>
+<p>$F[x]$ 中的 $n$ 次多项式最多有 $n$ 个根。</p>
+<p><strong>推论 5.4</strong></p>
+<p>如果 $f(x)$ 和 $g(x)$ 的次数都不超过 $n$，而它们在 $n+1$ 个不同的数上有相同的值，那么 $f(x)=g(x)$.</p>
+<p>我们知道多项式是否可约是与数域有关的，那么不同数域下的多项式，它的标准分解式往往是不同的。</p>
+<h2 id="六复系数和实系数多项式的因式分解">六、复系数和实系数多项式的因式分解</h2>
+<p><strong>代数基本定理</strong></p>
+<p>每个次数 $\geq 1$ 的复系数多项式在复数域内至少有一个根。</p>
+<p><strong>证明</strong>：比较复杂，不作叙述。</p>
+<p><strong>复系数多项式因式分解定理</strong></p>
+<p>每个次数 $\geq 1$ 的复系数多项式都可以唯一分解成一次因式的乘积。</p>
+<p>而对于实系数多项式 $f(x)$，如果 $\alpha$ 是 $f(x)$ 的复数根，那么 $\bar{\alpha}$ 也是 $f(x)$ 的根。</p>
+<p><strong>实系数多项式因式分解定理</strong></p>
+<p>每个次数 $\geq 1$ 的实系数多项式可以唯一分解成 一次因式和二次不可约因式的乘积。</p>
+<h2 id="七有理系数多项式">七、有理系数多项式</h2>
+<p>有理数域是最小的数域。在有理数域中有任意多次的不可约多项式。</p>
+<p><strong>本原多项式</strong></p>
+<p>如果一个非零的整系数多项式的各系数之间的因子只有 $\pm 1$，也就是互素，那么称这个多项式是本原多项式。</p>
+<p>根据本原多项式的定义，我们容易将任意一非零的有理系数多项式 $f(x)$ 唯一分解成有理数 $r$ 和本原多项式 $p(x)$ 的乘积。</p>
+<p><strong>高斯引理</strong></p>
+<p>两本原多项式的乘积还是本原多项式。</p>
+<p><strong>证明</strong>：反证法。假设有两本原多项式</p>
+<p>$$f(x)=\sum_{i=1}^{n}a_ix^i,\quad g(x)=\sum_{j=1}^{m}b_jx^j,$$</p>
+<p>而</p>
+<p>$$h(x)=f(x)g(x)=d_{n+m}x^{n+m}+d_{n+m-1}x^{n+m-1}+\cdots+d_0,$$</p>
+<p>不是本原多项式。那么存在素数 $p$ 整除 $h(x)$ 的所有系数。因为 $f(x)$ 和 $g(x)$ 都是本原多项式，那么 $p$ 不同时整除 $f(x)$ 的系数，设 $a_i$ 是第一个不能被 $p$ 整除的系数。同理可设 $b_j$ 是第一个不能被 $p$ 整除的系数。我们考虑 $d_{i+j}$，根据乘积定义</p>
+<p>$$d_{i+j}=a_ib_j + a_{i+1}b_{j-1}+ a_{i+2}b_{j-2}+\cdots+a_{i-1}b_{j+1}+\cdots.$$</p>
+<p>那么 $p\mid d_{i+j}$，但是 $p$ 不能整除右边除去 $a_ib_j$ 中的每一项，矛盾。</p>
         </div>
 
         

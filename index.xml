@@ -457,7 +457,35 @@
 &lt;p&gt;&lt;strong&gt;定理 5.1(余数定理)&lt;/strong&gt;  $x-\alpha$ 除 多项式 $f(x)$ 所得的余式是一个常数，这个常数等于 $f(\alpha)$.&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;证明&lt;/strong&gt;： 根据带余除法 $f(x) = (x-\alpha)p(x) + c$，那么 $f(\alpha)=c$.&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;推论 5.2&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;$\alpha$ 是 $f(x)$ 的根的充要条件是 $(x-\alpha) \mid f(x)$.&lt;/p&gt;</description>
+&lt;p&gt;$\alpha$ 是 $f(x)$ 的根的充要条件是 $(x-\alpha) \mid f(x)$.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;定理 5.3&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;$F[x]$ 中的 $n$ 次多项式最多有 $n$ 个根。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;推论 5.4&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;如果 $f(x)$ 和 $g(x)$ 的次数都不超过 $n$，而它们在 $n+1$ 个不同的数上有相同的值，那么 $f(x)=g(x)$.&lt;/p&gt;
+&lt;p&gt;我们知道多项式是否可约是与数域有关的，那么不同数域下的多项式，它的标准分解式往往是不同的。&lt;/p&gt;
+&lt;h2 id=&#34;六复系数和实系数多项式的因式分解&#34;&gt;六、复系数和实系数多项式的因式分解&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;代数基本定理&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;每个次数 $\geq 1$ 的复系数多项式在复数域内至少有一个根。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;证明&lt;/strong&gt;：比较复杂，不作叙述。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;复系数多项式因式分解定理&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;每个次数 $\geq 1$ 的复系数多项式都可以唯一分解成一次因式的乘积。&lt;/p&gt;
+&lt;p&gt;而对于实系数多项式 $f(x)$，如果 $\alpha$ 是 $f(x)$ 的复数根，那么 $\bar{\alpha}$ 也是 $f(x)$ 的根。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;实系数多项式因式分解定理&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;每个次数 $\geq 1$ 的实系数多项式可以唯一分解成 一次因式和二次不可约因式的乘积。&lt;/p&gt;
+&lt;h2 id=&#34;七有理系数多项式&#34;&gt;七、有理系数多项式&lt;/h2&gt;
+&lt;p&gt;有理数域是最小的数域。在有理数域中有任意多次的不可约多项式。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;本原多项式&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;如果一个非零的整系数多项式的各系数之间的因子只有 $\pm 1$，也就是互素，那么称这个多项式是本原多项式。&lt;/p&gt;
+&lt;p&gt;根据本原多项式的定义，我们容易将任意一非零的有理系数多项式 $f(x)$ 唯一分解成有理数 $r$ 和本原多项式 $p(x)$ 的乘积。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;高斯引理&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;两本原多项式的乘积还是本原多项式。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;证明&lt;/strong&gt;：反证法。假设有两本原多项式&lt;/p&gt;
+&lt;p&gt;$$f(x)=\sum_{i=1}^{n}a_ix^i,\quad g(x)=\sum_{j=1}^{m}b_jx^j,$$&lt;/p&gt;
+&lt;p&gt;而&lt;/p&gt;
+&lt;p&gt;$$h(x)=f(x)g(x)=d_{n+m}x^{n+m}+d_{n+m-1}x^{n+m-1}+\cdots+d_0,$$&lt;/p&gt;
+&lt;p&gt;不是本原多项式。那么存在素数 $p$ 整除 $h(x)$ 的所有系数。因为 $f(x)$ 和 $g(x)$ 都是本原多项式，那么 $p$ 不同时整除 $f(x)$ 的系数，设 $a_i$ 是第一个不能被 $p$ 整除的系数。同理可设 $b_j$ 是第一个不能被 $p$ 整除的系数。我们考虑 $d_{i+j}$，根据乘积定义&lt;/p&gt;
+&lt;p&gt;$$d_{i+j}=a_ib_j + a_{i+1}b_{j-1}+ a_{i+2}b_{j-2}+\cdots+a_{i-1}b_{j+1}+\cdots.$$&lt;/p&gt;
+&lt;p&gt;那么 $p\mid d_{i+j}$，但是 $p$ 不能整除右边除去 $a_ib_j$ 中的每一项，矛盾。&lt;/p&gt;</description>
       
     </item>
     

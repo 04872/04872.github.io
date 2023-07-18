@@ -485,7 +485,44 @@
 &lt;p&gt;$$h(x)=f(x)g(x)=d_{n+m}x^{n+m}+d_{n+m-1}x^{n+m-1}+\cdots+d_0,$$&lt;/p&gt;
 &lt;p&gt;不是本原多项式。那么存在素数 $p$ 整除 $h(x)$ 的所有系数。因为 $f(x)$ 和 $g(x)$ 都是本原多项式，那么 $p$ 不同时整除 $f(x)$ 的系数，设 $a_i$ 是第一个不能被 $p$ 整除的系数。同理可设 $b_j$ 是第一个不能被 $p$ 整除的系数。我们考虑 $d_{i+j}$，根据乘积定义&lt;/p&gt;
 &lt;p&gt;$$d_{i+j}=a_ib_j + a_{i+1}b_{j-1}+ a_{i+2}b_{j-2}+\cdots+a_{i-1}b_{j+1}+\cdots.$$&lt;/p&gt;
-&lt;p&gt;那么 $p\mid d_{i+j}$，但是 $p$ 不能整除右边除去 $a_ib_j$ 中的每一项，矛盾。&lt;/p&gt;</description>
+&lt;p&gt;那么 $p\mid d_{i+j}$，但是 $p$ 不能整除右边除去 $a_ib_j$ 中的每一项，矛盾。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;定理 7.1&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;如果一个非零整系数多项式可以分解成两个次数更低的有理系数多项式的乘积，那么它一定能分解成两个次数更低的整系数多项式的乘积&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;证明&lt;/strong&gt;：设整系数多项式 $f(x)$ 有如下分解&lt;/p&gt;
+&lt;p&gt;$$f(x)=g(x)h(x),\quad g(x),f(x)\in \mathbb{Q}[x],\quad \partial\left(g(x)\right)&amp;lt;\partial(f(x)),\partial(h(x))&amp;lt;\partial(f(x)),$$&lt;/p&gt;
+&lt;p&gt;那么存在有理数 $s$ 和 $r$ 以及整数 $a$，&lt;/p&gt;
+&lt;p&gt;$$f(x) = af_1(x), \quad g(x)=sg_1(x),\quad h(x)=rh_1(x),$$&lt;/p&gt;
+&lt;p&gt;其中 $f_1(x)、g_1(x)$ 和 $h_1(x)$ 都是本原多项式，那么 $af_1(x)=rsg_1(x)h_(x)$，所以&lt;/p&gt;
+&lt;p&gt;$$a=\pm rs.$$&lt;/p&gt;
+&lt;p&gt;也就是说 $rs$ 是整数，因此,&lt;/p&gt;
+&lt;p&gt;$$f(x) = (rsg_1(x))h(x).$$&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;推论 7.2&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;设 $f(x)\in \mathbb{Z}[x]$，$g(x)$ 是本原多项式，$h(x)\in \mathbb{Q}[x]$，如果 $f(x) = g(x)h(x)$， 那么 $h(x)\in \mathbb{Z}[x].$&lt;/p&gt;
+&lt;p&gt;这个推论给出了一个求整系数多项式有理根的方法。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;定理 7.3&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;设&lt;/p&gt;
+&lt;p&gt;$$f(x)= a_nx^n + a_{n-1}x^{n-1}+\cdots+a_1x+a_0,$$&lt;/p&gt;
+&lt;p&gt;是一个整系数多项式，如果 $\frac{r}{s}$ 是它的一个有理根，其中 $r$ 和 $s$ 互素，那么 $s\mid a_n$，$r\mid a_0.$&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;证明&lt;/strong&gt;：根据条件 $(x-\frac{r}{s})\mid f(x)$，所以 $(sx-r)\mid f(x)$.  又因为 $r$ 和 $s$ 互素，所以 $(sx-r)$ 是一个本原多项式。根据 &lt;strong&gt;推论 7.2&lt;/strong&gt; ，存在整数 $b_{n-1},\ldots, b_0$，使得&lt;/p&gt;
+&lt;p&gt;$$f(x) = (sx-r)(b_{n-1}x^{n-1}+\dots+b_1x+b_0),$$&lt;/p&gt;
+&lt;p&gt;比较系数得 $a_n = sb_{n-1},\quad a_0 = -rb_0.$&lt;/p&gt;
+&lt;p&gt;那么 $s\mid b_{n-1}, r\mid b_0.$&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;定理 7.4(Eisenstein判别法)&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;设&lt;/p&gt;
+&lt;p&gt;$$f(x)= a_nx^n + a_{n-1}x^{n-1}+\cdots+a_0 \in \mathbb{Z}[x],$$&lt;/p&gt;
+&lt;p&gt;如果有素数 $p$，使得&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;$p\nmid a_n.$&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;$p\mid a_{n-1},\ldots ,a_0.$&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;$p^2 \nmid a_0.$&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;那么 $f(x)$ 在有理数域上不可约。&lt;/p&gt;</description>
       
     </item>
     

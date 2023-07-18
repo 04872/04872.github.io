@@ -75,7 +75,7 @@
 <meta itemprop="name" content="多项式">
 <meta itemprop="description" content=""><meta itemprop="datePublished" content="2023-05-22T21:24:01+08:00" />
 <meta itemprop="dateModified" content="2023-05-22T21:24:01+08:00" />
-<meta itemprop="wordCount" content="2579">
+<meta itemprop="wordCount" content="3044">
 <meta itemprop="keywords" content="多项式," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="多项式"/>
 <meta name="twitter:description" content=""/>
@@ -458,6 +458,43 @@
 <p>不是本原多项式。那么存在素数 $p$ 整除 $h(x)$ 的所有系数。因为 $f(x)$ 和 $g(x)$ 都是本原多项式，那么 $p$ 不同时整除 $f(x)$ 的系数，设 $a_i$ 是第一个不能被 $p$ 整除的系数。同理可设 $b_j$ 是第一个不能被 $p$ 整除的系数。我们考虑 $d_{i+j}$，根据乘积定义</p>
 <p>$$d_{i+j}=a_ib_j + a_{i+1}b_{j-1}+ a_{i+2}b_{j-2}+\cdots+a_{i-1}b_{j+1}+\cdots.$$</p>
 <p>那么 $p\mid d_{i+j}$，但是 $p$ 不能整除右边除去 $a_ib_j$ 中的每一项，矛盾。</p>
+<p><strong>定理 7.1</strong></p>
+<p>如果一个非零整系数多项式可以分解成两个次数更低的有理系数多项式的乘积，那么它一定能分解成两个次数更低的整系数多项式的乘积</p>
+<p><strong>证明</strong>：设整系数多项式 $f(x)$ 有如下分解</p>
+<p>$$f(x)=g(x)h(x),\quad g(x),f(x)\in \mathbb{Q}[x],\quad \partial\left(g(x)\right)&lt;\partial(f(x)),\partial(h(x))&lt;\partial(f(x)),$$</p>
+<p>那么存在有理数 $s$ 和 $r$ 以及整数 $a$，</p>
+<p>$$f(x) = af_1(x), \quad g(x)=sg_1(x),\quad h(x)=rh_1(x),$$</p>
+<p>其中 $f_1(x)、g_1(x)$ 和 $h_1(x)$ 都是本原多项式，那么 $af_1(x)=rsg_1(x)h_(x)$，所以</p>
+<p>$$a=\pm rs.$$</p>
+<p>也就是说 $rs$ 是整数，因此,</p>
+<p>$$f(x) = (rsg_1(x))h(x).$$</p>
+<p><strong>推论 7.2</strong></p>
+<p>设 $f(x)\in \mathbb{Z}[x]$，$g(x)$ 是本原多项式，$h(x)\in \mathbb{Q}[x]$，如果 $f(x) = g(x)h(x)$， 那么 $h(x)\in \mathbb{Z}[x].$</p>
+<p>这个推论给出了一个求整系数多项式有理根的方法。</p>
+<p><strong>定理 7.3</strong></p>
+<p>设</p>
+<p>$$f(x)= a_nx^n + a_{n-1}x^{n-1}+\cdots+a_1x+a_0,$$</p>
+<p>是一个整系数多项式，如果 $\frac{r}{s}$ 是它的一个有理根，其中 $r$ 和 $s$ 互素，那么 $s\mid a_n$，$r\mid a_0.$</p>
+<p><strong>证明</strong>：根据条件 $(x-\frac{r}{s})\mid f(x)$，所以 $(sx-r)\mid f(x)$.  又因为 $r$ 和 $s$ 互素，所以 $(sx-r)$ 是一个本原多项式。根据 <strong>推论 7.2</strong> ，存在整数 $b_{n-1},\ldots, b_0$，使得</p>
+<p>$$f(x) = (sx-r)(b_{n-1}x^{n-1}+\dots+b_1x+b_0),$$</p>
+<p>比较系数得 $a_n = sb_{n-1},\quad a_0 = -rb_0.$</p>
+<p>那么 $s\mid b_{n-1}, r\mid b_0.$</p>
+<p><strong>定理 7.4(Eisenstein判别法)</strong></p>
+<p>设</p>
+<p>$$f(x)= a_nx^n + a_{n-1}x^{n-1}+\cdots+a_0 \in \mathbb{Z}[x],$$</p>
+<p>如果有素数 $p$，使得</p>
+<ol>
+<li>
+<p>$p\nmid a_n.$</p>
+</li>
+<li>
+<p>$p\mid a_{n-1},\ldots ,a_0.$</p>
+</li>
+<li>
+<p>$p^2 \nmid a_0.$</p>
+</li>
+</ol>
+<p>那么 $f(x)$ 在有理数域上不可约。</p>
         </div>
 
         
